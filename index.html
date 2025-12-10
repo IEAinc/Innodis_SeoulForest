@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PUB INDEX</title>
+
+    <link href="markup/images/favicon.ico" rel="shortcut icon">
+
+    <script type="text/javascript" src="markup/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="markup/js/ui.js"></script>
+
+    <link rel="stylesheet" href="markup/css/publish_list.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1 class="projectTit">
+            2025-12 서울숲
+            <small>POWERED BY <em>innodis</em></small>
+            <div class="counter">
+                <span class="total"></span>page 중 <span class="fin"></span>page 작업완료 
+                <div class="percent_div">프로젝트 퍼블리싱 진행률: <span class="percent"></span>% </div>
+            </div>
+            <button type="button" class="openDevLog is-active">DevLog</button>
+        </h1>
+
+        <div class="container is-active">
+            <div class="left">
+                <h2>DevLog</h2>
+                <ul class="logList">
+                    <li class="date">2023-03-29</li>
+                    <li><strong>메인</strong><em>업로드</em></li>
+                </ul>
+            </div>
+            <div class="right">
+                <h2 class="title">사용자 페이지 - tr 클래스 값으로 상태제어 (아무값이 없으면 진행중 , fin : 완료 , del : 삭제 )</h2>
+                <table>
+                    <colgroup>
+                        <col style="width:10%">
+                        <col style="width:8%">
+                        <col style="width:12%">
+                        <col style="width:10%">
+                        <col style="width:60px">
+                        <col style="width:60px">
+                        <col style="width:60px">
+                        <col style="width:80px">
+                        <!-- <col style="width:*"> -->
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>MENU</th>
+                            <th>URL</th>
+                            <th>VIEW</th>
+                            <th>페이지타입</th>
+                            <th>디자인(PC)</th>
+                            <th>디자인(MO)</th>
+                            <th>완료여부</th>
+                            <th>작업자</th>
+                            <th>COMMENT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 가이드 -->
+                        <tr class="">
+                            <td>가이드페이지</td>
+                            <td><p class="target"><span class='link'>guide.html</span></p></td>
+                            <td class="btn">
+                                <a class="btnPc" href="views/guide.html" target="_blank">PC</a>
+                                <a class="btnMo" href="guide.html">MO</a>
+                            </td>
+                            <td class="t_center">가이드</td>
+                            <td class="t_center"></td>
+                            <td class="t_center"></td>
+                            <td class="t_center">진행중</td>
+                            <td class="t_center">이정은</td>
+                            <td>
+                                <ul class="comment">
+                                    <li>공통소스 수시로 업데이트 예정</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- 메인 -->
+                        <tr class="">
+                            <td>메인페이지</td>
+                            <td><p class="target"><span class='link'>main.html</span></p></td>
+                            <td class="btn">
+                                <a class="btnPc" href="views/main.html" target="_blank">PC</a>
+                                <a class="btnMo" href="main.html">MO</a>
+                            </td>
+                            <td class="t_center">메인페이지</td>
+                            <td class="t_center"></td>
+                            <td class="t_center"></td>
+                            <td class="t_center">진행중</td>
+                            <td class="t_center">이정은</td>
+                            <td>
+                                <ul class="comment">
+                                    <li></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- Subpage -->
+                        <!-- 서울숲_공원소개 -->
+                        <tr class="">
+                            <td>서울숲_공원소개</td>
+                            <td><p class="target"><span class='link'>seoulForest_info.html</span></p></td>
+                            <td class="btn">
+                                <a class="btnPc" href="views/seoulForest_info.html" target="_blank">PC</a>
+                                <a class="btnMo" href="seoulForest_info.html">MO</a>
+                            </td>
+                            <td class="t_center">서울숲_공원소개</td>
+                            <td class="t_center"></td>
+                            <td class="t_center"></td>
+                            <td class="t_center">진행중</td>
+                            <td class="t_center">이정은</td>
+                            <td>
+                                <ul class="comment">
+                                    <li></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- 서울숲_이용시간 -->
+                        <tr class="">
+                            <td>서울숲_이용시간</td>
+                            <td><p class="target"><span class='link'>seoulForest_operating_hours.html</span></p></td>
+                            <td class="btn">
+                                <a class="btnPc" href="views/seoulForest_operating_hours.html" target="_blank">PC</a>
+                                <a class="btnMo" href="seoulForest_operating_hours.html">MO</a>
+                            </td>
+                            <td class="t_center">서울숲_이용시간</td>
+                            <td class="t_center"></td>
+                            <td class="t_center"></td>
+                            <td class="t_center"></td>
+                            <td class="t_center">이정은</td>
+                            <td>
+                                <ul class="comment">
+                                    <li></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- 서울숲_둘러보기 -->
+                        <tr class="">
+                            <td>서울숲_둘러보기</td>
+                            <td><p class="target"><span class='link'>seoulForest_browse.html</span></p></td>
+                            <td class="btn">
+                                <a class="btnPc" href="views/seoulForest_browse.html" target="_blank">PC</a>
+                                <a class="btnMo" href="seoulForest_browse.html">MO</a>
+                            </td>
+                            <td class="t_center">서울숲_둘러보기</td>
+                            <td class="t_center"></td>
+                            <td class="t_center"></td>
+                            <td class="t_center"></td>
+                            <td class="t_center">이정은</td>
+                            <td>
+                                <ul class="comment">
+                                    <li></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- 서울숲_사용안내 -->
+                        <tr class="">
+                            <td>서울숲_사용안내</td>
+                            <td><p class="target"><span class='link'>seoulForest_how_to_use.html</span></p></td>
+                            <td class="btn">
+                                <a class="btnPc" href="views/seoulForest_how_to_use.html" target="_blank">PC</a>
+                                <a class="btnMo" href="seoulForest_how_to_use.html">MO</a>
+                            </td>
+                            <td class="t_center">서울숲_사용안내</td>
+                            <td class="t_center"></td>
+                            <td class="t_center"></td>
+                            <td class="t_center"></td>
+                            <td class="t_center">이정은</td>
+                            <td>
+                                <ul class="comment">
+                                    <li></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- 서울숲_촬영안내 -->
+                        <tr class="">
+                            <td>서울숲_촬영안내</td>
+                            <td><p class="target"><span class='link'>seoulForest_photo_info.html</span></p></td>
+                            <td class="btn">
+                                <a class="btnPc" href="views/seoulForest_photo_info.html" target="_blank">PC</a>
+                                <a class="btnMo" href="seoulForest_photo_info.html">MO</a>
+                            </td>
+                            <td class="t_center">서울숲_촬영안내</td>
+                            <td class="t_center"></td>
+                            <td class="t_center"></td>
+                            <td class="t_center"></td>
+                            <td class="t_center">이정은</td>
+                            <td>
+                                <ul class="comment">
+                                    <li></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- 공원소식 -->
+                        <tr class="">
+                            <td>공원소식</td>
+                            <td><p class="target"><span class='link'>seoulForest_park_info.html</span></p></td>
+                            <td class="btn">
+                                <a class="btnPc" href="views/seoulForest_park_info.html" target="_blank">PC</a>
+                                <a class="btnMo" href="seoulForest_park_info.html">MO</a>
+                            </td>
+                            <td class="t_center">공원소식</td>
+                            <td class="t_center"></td>
+                            <td class="t_center"></td>
+                            <td class="t_center"></td>
+                            <td class="t_center">이정은</td>
+                            <td>
+                                <ul class="comment">
+                                    <li></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- 안내지도 -->
+                        <tr class="">
+                            <td>안내지도</td>
+                            <td><p class="target"><span class='link'>seoulForest_map.html</span></p></td>
+                            <td class="btn">
+                                <a class="btnPc" href="views/seoulForest_map.html" target="_blank">PC</a>
+                                <a class="btnMo" href="seoulForest_map.html">MO</a>
+                            </td>
+                            <td class="t_center">안내지도</td>
+                            <td class="t_center"></td>
+                            <td class="t_center"></td>
+                            <td class="t_center"></td>
+                            <td class="t_center">이정은</td>
+                            <td>
+                                <ul class="comment">
+                                    <li></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- 공원자료실 -->
+                        <!-- 고객센터_문의전화 -->
+                        <tr class="">
+                            <td>고객센터_문의전화</td>
+                            <td><p class="target"><span class='link'>seoulForest_service_center_call.html</span></p></td>
+                            <td class="btn">
+                                <a class="btnPc" href="views/seoulForest_service_center_call.html" target="_blank">PC</a>
+                                <a class="btnMo" href="seoulForest_service_center_call.html">MO</a>
+                            </td>
+                            <td class="t_center">고객센터_문의전화</td>
+                            <td class="t_center"></td>
+                            <td class="t_center"></td>
+                            <td class="t_center"></td>
+                            <td class="t_center">이정은</td>
+                            <td>
+                                <ul class="comment">
+                                    <li></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- 고객센터 -->
+                        <tr class="">
+                            <td>고객센터</td>
+                            <td><p class="target"><span class='link'>seoulForest_service_center.html</span></p></td>
+                            <td class="btn">
+                                <a class="btnPc" href="views/seoulForest_service_center.html" target="_blank">PC</a>
+                                <a class="btnMo" href="seoulForest_service_center.html">MO</a>
+                            </td>
+                            <td class="t_center">고객센터</td>
+                            <td class="t_center"></td>
+                            <td class="t_center"></td>
+                            <td class="t_center"></td>
+                            <td class="t_center">이정은</td>
+                            <td>
+                                <ul class="comment">
+                                    <li></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- 완료 mod -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

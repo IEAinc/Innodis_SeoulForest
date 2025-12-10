@@ -1,0 +1,43 @@
+:root {
+  /* fonts weight */
+  --fw-thin: 100;        /* 매우 얇음 */
+  --fw-extra-light: 200; /* 매우 얇음 + */
+  --fw-light: 300;       /* 얇음 */
+  --fw-regular: 400;     /* 보통 */
+  --fw-medium: 500;      /* 약간 굵음 */
+  --fw-semi-bold: 600;   /* 반굵음 */
+  --fw-bold: 700;        /* 굵음 */
+  --fw-extra-bold: 800;  /* 매우 굵음 */
+  --fw-black: 900;       /* 가장 굵음 */
+
+  /* 색상 */
+  --color-white: #fff;
+  --color-black: #2A2A2A;
+  --color-gray: #777777;
+  --color-gray2: #7B7B7B;
+  --color-gray3: #616161;
+  --color-gray4: #444444;
+  --color-gray5: #999999;
+  --color-gray6: #949494;
+  --color-gray7: #434343;
+  --color-light-green:#7BA100;
+  --color-point: #FF511C;
+  --color-blue: #1877F2;
+  --color-transparent: transparent;
+
+  /* 보더 */
+  --border-color: #E2E2E2;
+  --border-color2: #999999;
+  --border-color3: #DFDFDF;
+
+
+  /* 메인 */
+  --main-color: #31A239;
+  --main-sub-color: #6F9972;
+  --main-dark-color: #003504;
+
+  /* 배경색 */
+  --bg-color-green: #E1F3E2;
+  --bg-color-gray: #F9F9F9;
+  --bg-color-table: #F2F2F2;
+}
