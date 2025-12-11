@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang=ko>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- css -->
+  <link rel="stylesheet" href="../../resources/css/main.css">
+  <link rel="stylesheet" href="../../resources/lib/swiper/swiper.css">
+
+  <!-- lib -->
+  <script src="../../resources/lib/jquery-1.11.3.min.js"></script>
+  <script src="../../resources/lib/swiper/swiper.js"></script>
+
+  <!-- js -->
+  <script src="../../resources/js/main.js"></script>
+
+  <title>이용시간</title>
+</head>
+<body>
+<!-- [웹 접근성] : 본문 바로가기 -->
+<a href="#main" id="skip-nav">본문 바로가기</a>
+<!-- 헤더 -->
+<header>
+  <!-- [사이드바] dim 처리 영역 -->
+  <div id="dim-overlay" class="dim" onclick="closeSideBar();"></div>
+  <div class="inner-wrap">
+    <!-- 로고 -->
+    <h1>
+      <a href="#">
+        <img src="../../resources/images/header/logo.svg" alt="서울의 공원">
+      </a>
+    </h1>
+    <!-- gnb -->
+    <nav>
+      <!-- pc -->
+      <ul class="pc-nav pc-flex-only">
+        <li>
+          <button type="button"><span>서울숲</span></button>
+          <ul>
+            <li><a href="#">공원소개</a></li>
+            <li><a href="#">이용시간</a></li>
+            <li><a href="#">주차안내</a></li>
+            <li><a href="#">둘러보기</a></li>
+            <li><a href="#">사용안내</a></li>
+            <li><a href="#">촬영안내</a></li>
+            <li><a href="#" class="link">공원탐방</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button"><span>공원소식</span></button>
+          <ul>
+            <li><a href="#">프로그램</a></li>
+            <li><a href="#">새소식</a></li>
+            <li><a href="#">고시·공고</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button"><span>안내지도</span></button>
+          <ul>
+            <li><a href="#" class="link">안내지도</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button"><span>자료실</span></button>
+          <ul>
+            <li><a href="#">동영상</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button"><span>고객센터</span></button>
+          <ul>
+            <li><a href="#">문의전화</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- mobile -->
+      <div class="sidebar tablet-mo-only">
+        <div class="sidebar-top">
+          <!-- 언어 설정 -->
+          <h2><img src="../../resources/images/header/logo.svg" alt="서울의 공원"/></h2>
+          <!-- 닫기 버튼 -->
+          <button type="button" class="ico-btn ico-close" onclick="closeSideBar()"><span class="visually-hidden">닫기</span></button>
+        </div>
+        <ul class="accordion-nav-list">
+          <li class="active">
+            <button type="button" class="active">서울숲</button>
+            <ul>
+              <li class="active"><a href="#">공원소개</a></li>
+              <li><a href="#">이용시간</a></li>
+              <li><a href="#">주차안내</a></li>
+              <li><a href="#">둘러보기</a></li>
+              <li><a href="#">사용안내</a></li>
+              <li><a href="#">촬영안내</a></li>
+              <li><a href="#">공원탐방</a></li>
+            </ul>
+          </li>
+          <li>
+            <button type="button">공원소식</button>
+            <ul>
+              <li><a href="#">프로그램</a></li>
+              <li><a href="#">새소식</a></li>
+              <li><a href="#">고시·공고</a></li>
+            </ul>
+          </li>
+          <li>
+            <button type="button">안내지도</button>
+            <ul>
+              <li><a href="#">안내지도</a></li>
+            </ul>
+          </li>
+          <li class="long">
+            <button type="button">자료실</button>
+            <ul>
+              <li><a href="#">동영상</a></li>
+            </ul>
+          </li>
+          <li class="long">
+            <button type="button">고객센터</button>
+            <ul>
+              <li><a href="#">문의전화</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- hamburger (mobile) -->
+    <button type="button" class="ico-btn ico-hamburger tablet-mo-flex-only" onclick="openSideBar()"><span class="visually-hidden">메뉴 열기</span></button>
+  </div>
+</header>
+
+<!-- 메인 -->
+<main id="main">
+  <!-- 서브 페이지 텍스트 -->
+  <div class="sub-title-wrap">
+    <div class="sub-title">
+      <h2>이용시간</h2>
+      <div class="breadcrumb">
+        <span class="home"><span class="visually-hidden">경로</span></span>
+        <ul>
+          <li>서울숲</li>
+          <li class="present">이용시간</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 서브 페이지 -->
+  <div class="sub-inner-wrap">
+    <section class="sub-sec">
+      <div class="sub-sec-tit-wrap">
+        <h3>이용시간</h3>
+      </div>
+
+      <!-- 탭 영역 (이미지) -->
+      <div class="img-tab-wrap">
+        <div class="tab-wrap" role="tablist" data-tab="fraternal" aria-label="탭 메뉴">
+          <button id="tab1" type="button" role="tab" aria-controls="panel1" aria-selected="true" tabindex="0" class="active">생태숲</button>
+          <button id="tab2" type="button" role="tab" aria-controls="panel2" aria-selected="false" tabindex="-1">곤충식물원</button>
+          <button id="tab3" type="button" role="tab" aria-controls="panel3" aria-selected="false" tabindex="-1">나비정원</button>
+          <button id="tab4" type="button" role="tab" aria-controls="panel4" aria-selected="false" tabindex="-1">바닥분수</button>
+          <button id="tab5" type="button" role="tab" aria-controls="panel5" aria-selected="false" tabindex="-1">방문자센터</button>
+        </div>
+        <div class="img-wrap">
+          <img src="../../resources/images/contents/operatingHours/img1.png" alt="생태숲" class="active"/>
+          <img src="../../resources/images/contents/operatingHours/img2.png" alt="곤충식물원"/>
+          <img src="../../resources/images/contents/operatingHours/img3.png" alt="나비정원"/>
+          <img src="../../resources/images/contents/operatingHours/img4.png" alt="바닥분수"/>
+          <img src="../../resources/images/contents/operatingHours/img5.png" alt="방문자센터"/>
+        </div>
+      </div>
+      <!-- //  탭 영역 -->
+
+      <!-- 탭에 해당하는 세부정보 -->
+      <!-- 탭 모음 -->
+      <div class="tab" id="panel1" role="tabpanel" aria-labelledby="tab1">
+        <div class="tab-content-box">
+          <!-- a. 컨텐츠 제목 -->
+          <div class="content-tit-wrap">
+            <h4>생태숲</h4>
+          </div>
+          <!-- b. 컨텐츠 -->
+          <!-- 1. 생태숲 -->
+          <div class="custom-info-table pc-tablet-only">
+            <table>
+              <caption class="visually-hidden">생태숲 이용시간에 관한 표: (운영일/운영시간/기타 사항) 포함</caption>
+              <colgroup>
+                <col style="width: 33%;">
+                <col style="width: 33%;">
+                <col style="width: 33%;">
+              </colgroup>
+              <thead>
+              <tr>
+                <th><div class="th-wrap"><p>운영일</p></div></th>
+                <th><div class="th-wrap"><p>운영시간</p></div></th>
+                <th><div class="th-wrap"><p>기타 사항</p></div></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><div class="td-wrap center"><p>1월~12월</p></div></td>
+                <td><div class="td-wrap center"><p>5:30 ~ 21:30</p></div></td>
+                <td><div class="td-wrap center"><p>사슴우리, 보행가교</p></div></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="custom-design-scroll-table mo-only">
+            <div class="custom-design-table">
+              <p class="visually-hidden">생태숲 이용시간에 관한 표: (운영일/운영시간/기타 사항) 포함</p>
+              <div class="t-scroll-wrap">
+                <!-- 헤더가 되는 부분 -->
+                <div class="t-col sticky-col">
+                  <div class="t-th">운영월</div>
+                  <div class="t-th h-line2">운영시간</div>
+                  <div class="t-th">기타 사항</div>
+                </div>
+                <!-- 세부내용 -->
+                <div class="t-col">
+                  <div class="t-td">5월, 6월, 9월</div>
+                  <div class="t-td h-line2">13:00, 14:00,<br/>15:00, 16:00</div>
+                  <div class="t-td ">30분씩 4회 가동</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="tab" id="panel2" role="tabpanel" aria-labelledby="tab2" hidden>
+        <!-- a. 컨텐츠 제목 -->
+        <div class="content-tit-wrap">
+          <h4>곤충식물원</h4>
+        </div>
+        <!-- b. 컨텐츠 -->
+        <!-- 2. 곤충식물원 -->
+        <div class="custom-info-table pc-tablet-only">
+          <table>
+            <caption class="visually-hidden">곤충식물원 이용시간에 관한 표: (운영일/운영시간/기타 사항) 포함</caption>
+            <colgroup>
+              <col style="width: 33%;">
+              <col style="width: 33%;">
+              <col style="width: 33%;">
+            </colgroup>
+            <thead>
+            <tr>
+              <th><div class="th-wrap"><p>운영일</p></div></th>
+              <th><div class="th-wrap"><p>운영시간</p></div></th>
+              <th><div class="th-wrap"><p>기타 사항</p></div></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td><div class="td-wrap center"><p>3월~10월</p></div></td>
+              <td><div class="td-wrap center"><p>10:00 ~ 17:00</p></div></td>
+              <td><div class="td-wrap center"><p>16:30까지 입장 가능, 월요일 휴관</p></div></td>
+            </tr>
+            <tr>
+              <td><div class="td-wrap center"><p>11월~2월</p></div></td>
+              <td><div class="td-wrap center"><p>10:00 ~ 16:00</p></div></td>
+              <td><div class="td-wrap center"><p>15:30까지 입장 가능, 월요일 휴관</p></div></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="custom-design-scroll-table mo-only">
+          <div class="custom-design-table">
+            <p class="visually-hidden">곤충식물원 이용시간에 관한 표: (운영일/운영시간/기타 사항) 포함</p>
+            <div class="t-scroll-wrap">
+              <!-- 헤더가 되는 부분 -->
+              <div class="t-col sticky-col">
+                <div class="t-th">운영월</div>
+                <div class="t-th h-line2">운영시간</div>
+                <div class="t-th">기타 사항</div>
+              </div>
+              <!-- 세부내용 -->
+              <div class="t-col">
+                <div class="t-td">5월, 6월, 9월</div>
+                <div class="t-td h-line2">13:00, 14:00,<br/>15:00, 16:00</div>
+                <div class="t-td ">30분씩 4회 가동</div>
+              </div>
+              <div class="t-col">
+                <div class="t-td">7월, 8월</div>
+                <div class="t-td h-line2">12:00, 13:00,<br/>14:00, 15:00</div>
+                <div class="t-td">30분씩 5회 가동</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="tab" id="panel3" role="tabpanel" aria-labelledby="tab3" hidden>
+        <!-- a. 컨텐츠 제목 -->
+        <div class="content-tit-wrap">
+          <h4>나비정원</h4>
+        </div>
+        <!-- b. 컨텐츠 -->
+        <!-- 3. 나비정원 -->
+        <div class="custom-info-table pc-tablet-only">
+          <table>
+            <caption class="visually-hidden">나비정원 이용시간에 관한 표: (운영일/운영시간/기타 사항) 포함</caption>
+            <colgroup>
+              <col style="width: 33%;">
+              <col style="width: 33%;">
+              <col style="width: 33%;">
+            </colgroup>
+            <thead>
+            <tr>
+              <th><div class="th-wrap"><p>운영일</p></div></th>
+              <th><div class="th-wrap"><p>운영시간</p></div></th>
+              <th><div class="th-wrap"><p>기타 사항</p></div></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td><div class="td-wrap center"><p>5월~10월</p></div></td>
+              <td><div class="td-wrap center"><p>10:00 ~ 17:00</p></div></td>
+              <td><div class="td-wrap center"><p>16:30까지 입장 가능, 월요일 휴관</p></div></td>
+            </tr>
+            <tr>
+              <td><div class="td-wrap center"><p>11월~2월</p></div></td>
+              <td><div class="td-wrap center"><p>10:00 ~ 16:00</p></div></td>
+              <td><div class="td-wrap center"><p>16:30까지 입장 가능, 월요일 휴관</p></div></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="custom-design-scroll-table mo-only">
+          <div class="custom-design-table">
+            <p class="visually-hidden">나비정원 이용시간에 관한 표: (운영일/운영시간/기타 사항) 포함</p>
+            <div class="t-scroll-wrap">
+              <!-- 헤더가 되는 부분 -->
+              <div class="t-col sticky-col">
+                <div class="t-th">운영월</div>
+                <div class="t-th h-line2">운영시간</div>
+                <div class="t-th">기타 사항</div>
+              </div>
+              <!-- 세부내용 -->
+              <div class="t-col">
+                <div class="t-td">5월, 6월, 9월</div>
+                <div class="t-td h-line2">13:00, 14:00,<br/>15:00, 16:00</div>
+                <div class="t-td ">30분씩 4회 가동</div>
+              </div>
+              <div class="t-col">
+                <div class="t-td">7월, 8월</div>
+                <div class="t-td h-line2">12:00, 13:00,<br/>14:00, 15:00</div>
+                <div class="t-td">30분씩 5회 가동</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="tab" id="panel4" role="tabpanel" aria-labelledby="tab4" hidden>
+        <!-- a. 컨텐츠 제목 -->
+        <div class="content-tit-wrap">
+          <h4>바닥분수</h4>
+        </div>
+        <!-- b. 컨텐츠 -->
+        <!-- 4. 바닥분수 -->
+        <div class="custom-info-table pc-tablet-only">
+          <table>
+            <caption class="visually-hidden">바닥분수 이용시간에 관한 표: (운영일/운영시간/기타 사항) 포함</caption>
+            <colgroup>
+              <col style="width: 33%;">
+              <col style="width: 33%;">
+              <col style="width: 33%;">
+            </colgroup>
+            <thead>
+            <tr>
+              <th><div class="th-wrap"><p>운영일</p></div></th>
+              <th><div class="th-wrap"><p>운영시간</p></div></th>
+              <th><div class="th-wrap"><p>기타 사항</p></div></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td><div class="td-wrap center"><p>5월, 6월, 9월</p></div></td>
+              <td><div class="td-wrap center"><p>13:00, 14:00, 15:00, 16:00</p></div></td>
+              <td><div class="td-wrap center"><p>30분씩 4회 가동</p></div></td>
+            </tr>
+            <tr>
+              <td><div class="td-wrap center"><p>7월, 8월</p></div></td>
+              <td><div class="td-wrap center"><p>12:00, 13:00, 14:00, 15:00</p></div></td>
+              <td><div class="td-wrap center"><p>30분씩 5회 가동</p></div></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="custom-design-scroll-table mo-only">
+          <div class="custom-design-table">
+            <p class="visually-hidden">바닥분수 이용시간에 관한 표: (운영일/운영시간/기타 사항) 포함</p>
+            <div class="t-scroll-wrap">
+              <!-- 헤더가 되는 부분 -->
+              <div class="t-col sticky-col">
+                <div class="t-th">운영월</div>
+                <div class="t-th h-line2">운영시간</div>
+                <div class="t-th">기타 사항</div>
+              </div>
+              <!-- 세부내용 -->
+              <div class="t-col">
+                <div class="t-td">5월, 6월, 9월</div>
+                <div class="t-td h-line2">13:00, 14:00,<br/>15:00, 16:00</div>
+                <div class="t-td ">30분씩 4회 가동</div>
+              </div>
+              <div class="t-col">
+                <div class="t-td">7월, 8월</div>
+                <div class="t-td h-line2">12:00, 13:00,<br/>14:00, 15:00</div>
+                <div class="t-td">30분씩 5회 가동</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- 테이블 하단 안내 멘트 -->
+        <div class="t-notice-wrap">
+          <p class="c-point">
+            ※ 바닥분수는 접촉형 수경시설로, 코로나19 대응관련하여 물놀이이용이
+            어려울 수 있음. 운영시간은 변동될 수 있어,<br class="mo-only"/>
+            이용시 사전 문의(서울숲 방문자 센터: 460-2905)
+          </p>
+        </div>
+      </div>
+      <div class="tab" id="panel5" role="tabpanel" aria-labelledby="tab5" hidden>
+        <!-- a. 컨텐츠 제목 -->
+        <div class="content-tit-wrap">
+          <h4>방문자센터</h4>
+        </div>
+        <!-- b. 컨텐츠 -->
+        <!-- 5. 방문자센터 -->
+        <div class="custom-info-table pc-tablet-only">
+          <table>
+            <caption class="visually-hidden">방문자센터 이용시간에 관한 표: (운영일/운영시간/기타 사항) 포함</caption>
+            <colgroup>
+              <col style="width: 33%;">
+              <col style="width: 33%;">
+              <col style="width: 33%;">
+            </colgroup>
+            <thead>
+            <tr>
+              <th><div class="th-wrap"><p>운영일</p></div></th>
+              <th><div class="th-wrap"><p>운영시간</p></div></th>
+              <th><div class="th-wrap"><p>기타 사항</p></div></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td><div class="td-wrap center"><p>1월~12월</p></div></td>
+              <td><div class="td-wrap center"><p>09:00 ~ 18:00</p></div></td>
+              <td><div class="td-wrap center"><p>연중무휴, 방문자센터 휠체어 및 유모차 최대2시간 무료대여</p></div></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="custom-design-scroll-table mo-only">
+          <div class="custom-design-table">
+            <p class="visually-hidden">방문자센터 이용시간에 관한 표: (운영일/운영시간/기타 사항) 포함</p>
+            <div class="t-scroll-wrap">
+              <!-- 헤더가 되는 부분 -->
+              <div class="t-col sticky-col">
+                <div class="t-th">운영월</div>
+                <div class="t-th">운영시간</div>
+                <div class="t-th h-line2">기타 사항</div>
+              </div>
+              <!-- 세부내용 -->
+              <div class="t-col">
+                <div class="t-td">1월~12월</div>
+                <div class="t-td">09:00 ~ 18:00</div>
+                <div class="t-td h-line2">연중무휴, 방문자센터 휠체어 및 유모차<br/> 최대2시간 무료대여</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- // 탭에 해당하는 세부정보 -->
+    </section>
+  </div>
+
+</main>
+
+
+<!-- 푸터 -->
+<footer>
+  <div class="inner-wrap">
+    <div class="footer-top">
+      <div class="footer-info">
+        <ul>
+          <li><a href="#">홈페이지 바로잡기</a></li>
+          <li><a href="#">조직 및 업무 검색</a></li>
+          <li><a href="#">다산콜센터</a></li>
+          <li class="point"><a href="#">공원주요연락처</a></li>
+        </ul>
+      </div>
+      <div class="footer-lang-wrap">
+        <img src="../../resources/images/footer/footer_logo1.png" alt="응답소"/>
+        <a href="#" target="_blank" title="페이스북 새 창 열기"><img src="../../resources/images/footer/sns_facebook.svg" alt="페이스북"/></a>
+        <div class="custom-select" data-options="1">
+          <button type="button" class="select-toggle" aria-haspopup="listbox" aria-expanded="false">
+            <span class="selected-text"></span>
+          </button>
+          <ul class="select-list" role="listbox" aria-hidden="true"></ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="f-bottom-wrap">
+        <h4><img src="../../resources/images/footer/logo_footer.svg" alt="서울의 공원"/></h4>
+        <ul>
+          <li>(04514) 서울특별시 중구 서소문로 124 씨티스퀘어 8층 ㅣ 02)120</li>
+          <li>COPYRIGHT©2026 SEOUL METROPOLITAN GOVERNMENT. ALL RIGHTS RESERVED</li>
+        </ul>
+      </div>
+      <a href="#" target="_blank" title="다산콜센터 120 전화걸기" class="f-call">
+        <span class="f-tit">다산콜센터</span>
+        <span class="f-phone-num">120</span>
+      </a>
+
+    </div>
+  </div>
+</footer>
+<script>
+/* 실행문 */
+document.addEventListener("DOMContentLoaded", () => {
+  new TabManager('en');
+});
+</script>
+</body>
+</html>

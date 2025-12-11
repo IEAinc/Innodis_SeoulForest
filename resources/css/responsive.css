@@ -7,8 +7,14 @@
 .pc-inline-flex-only { display: inline-flex !important; }
 .pc-inline-only { display: inline !important; }
 .pc-tablet-only { display: block !important; } /* 추가 */
+.pc-table-column-only {display:table-column !important;}
+.pc-tablet-table-column-only {display:table-column !important;}
+.pc-mo-table-column-only {display:table-column !important;}
 
 /* 기본적으로 숨길 요소들 */
+.tablet-mo-table-column-only,
+.mo-table-column-only,
+.tablet-table-column-only,
 .tablet-only,
 .mo-only,
 .tablet-mo-only,
@@ -33,6 +39,8 @@
 -------------------------------- */
 @media (max-width: 1024px) and (min-width: 651px) {
   /* PC 관련 클래스 감춤 */
+  .pc-mo-table-column-only,
+  .pc-table-column-only,
   .pc-only,
   .pc-flex-only,
   .pc-inline-flex-only,
@@ -45,18 +53,21 @@
   .tablet-flex-only { display: flex !important; }
   .tablet-inline-flex-only { display: inline-flex !important; }
   .tablet-inline-only { display: inline !important; }
+  .tablet-table-column-only {display:table-column !important;}
 
   /* PC + Tablet 조합 표시 */
   .pc-tablet-only { display: block !important; }
   .pc-tablet-flex-only { display: flex !important; }
   .pc-tablet-inline-flex-only { display: inline-flex !important; }
   .pc-tablet-inline-only { display: inline !important; }
+  .pc-tablet-table-column-only {display:table-column !important;}
 
   /* Tablet + Mobile 조합 표시 */
   .tablet-mo-only { display: block !important; }
   .tablet-mo-flex-only { display: flex !important; }
   .tablet-mo-inline-flex-only { display: inline-flex !important; }
   .tablet-mo-inline-only { display: inline !important; }
+  .table-mo-table-column-only {display:table-column !important;}
 }
 
 /* ------------------------------
@@ -64,6 +75,7 @@
 -------------------------------- */
 @media (max-width: 650px) {
   /* PC, Tablet 관련 클래스 감춤 */
+  .pc-table-column-only,
   .pc-only,
   .pc-flex-only,
   .pc-inline-flex-only,
@@ -72,6 +84,7 @@
   .tablet-flex-only,
   .tablet-inline-flex-only,
   .tablet-inline-only,
+  .pc-tablet-table-column-only,
   .pc-tablet-only,
   .pc-tablet-flex-only,
   .pc-tablet-inline-flex-only,
@@ -84,16 +97,19 @@
   .mo-flex-only { display: flex !important; }
   .mo-inline-flex-only { display: inline-flex !important; }
   .mo-inline-only { display: inline !important; }
+  .mo-table-column-only {display:table-column !important;}
 
   /* PC + Mobile 조합 표시 */
   .pc-mo-only { display: block !important; }
   .pc-mo-flex-only { display: flex !important; }
   .pc-mo-inline-flex-only { display: inline-flex !important; }
   .pc-mo-inline-only { display: inline !important; }
+  .pc-mo-table-column-only {display:table-column !important;}
 
   /* Tablet + Mobile 조합 표시 유지 */
   .tablet-mo-only { display: block !important; }
   .tablet-mo-flex-only { display: flex !important; }
   .tablet-mo-inline-flex-only { display: inline-flex !important; }
   .tablet-mo-inline-only { display: inline !important; }
+  .table-mo-table-column-only {display:table-column !important;}
 }

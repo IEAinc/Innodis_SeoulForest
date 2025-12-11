@@ -3,6 +3,7 @@
 * 2. [공통] 셀렉트박스 (function)
 * 3. [공통] 모달 관련 함수 (function, 실행문)
 * 4. [공통] button/a 중복클릭 방지 (function, 실행문)
+* 5. [공통] 탭 관련 함수
 *  */
 /* [변수 모음] */
 /* a. 언어 설정 관련 */
@@ -898,6 +899,358 @@ function applyClickInterval(elements, delay) {
     };
   });
 }
+/* 5. [공통] 탭 관련 함수 */
+class TabManager {
+  constructor(tabSwiperLists, lang = 'ko') {
+    this.isMobile = window.innerWidth <= 1024;
+    this.tabSets = new Map();
+    this.lang = lang;
+    this.init();
+    window.addEventListener('resize', () => this.handleResize());
+  }
+
+  handleResize() {
+    const wasMobile = this.isMobile;
+    this.isMobile = window.innerWidth <= 1024;
+
+    document.querySelectorAll('.tab-wrap').forEach(wrap => {
+      const tabType = wrap.getAttribute('data-tab');
+
+      if (tabType === 'fraternal') {
+        if (!wasMobile && this.isMobile) {
+          // PC → 모바일
+          this.moveActiveTabToTop(wrap);
+          wrap.querySelectorAll('[role="tab"]').forEach(tab => tab.classList.remove('opened'));
+        } else if (wasMobile && !this.isMobile) {
+          // 모바일 → PC
+          this.restoreOriginalOrder(wrap);
+          wrap.querySelectorAll('[role="tab"]').forEach(tab => tab.classList.remove('opened'));
+        }
+      }
+    });
+  }
+
+  init() {
+    const tabWraps = document.querySelectorAll('.tab-wrap');
+    tabWraps.forEach(wrap => {
+      this.saveOriginalOrder(wrap);
+      this.attachEventListeners(wrap);
+
+      // 모바일일 경우 opened 제거
+      if (this.isMobile && wrap.getAttribute('data-tab') === 'fraternal') {
+        wrap.querySelectorAll('[role="tab"]').forEach(tab => tab.classList.remove('opened'));
+      }
+    });
+
+    // 초기 활성화 탭 선택
+    const allTabs = document.querySelectorAll('[role="tab"]');
+    const initialTab = Array.from(allTabs).find(tab => tab.getAttribute('aria-selected') === 'true') || allTabs[0];
+    if (initialTab) this.activateTab(initialTab, initialTab.closest('.tab-wrap'));
+
+    if (this.isMobile) {
+      tabWraps.forEach(wrap => {
+        const activeTab = wrap.querySelector('[role="tab"].active');
+        if (!activeTab) return;
+
+        const targetId = activeTab.getAttribute('aria-controls');
+        const targetPanel = document.getElementById(targetId);
+        if (!targetPanel) return;
+
+        targetPanel.hidden = false; // 패널 visible
+
+        // opened 클래스는 추가하지 않음 → 초기에는 닫힌 상태
+        activeTab.classList.remove('opened');
+      });
+    }
+
+  }
+
+  attachEventListeners(wrap) {
+    const tabs = wrap.querySelectorAll('[role="tab"]');
+
+    tabs.forEach((tab, i) => {
+
+      tab.addEventListener('click', () => this.activateTab(tab, wrap));
+
+      tab.addEventListener('keydown', e => {
+        let newIndex = null;
+
+        // → ArrowRight
+        if (e.key === "ArrowRight") {
+          newIndex = (i + 1) % tabs.length;
+          e.preventDefault();
+        }
+
+        // ← ArrowLeft
+        else if (e.key === "ArrowLeft") {
+          newIndex = (i - 1 + tabs.length) % tabs.length;
+          e.preventDefault();
+        }
+
+        // TAB (다음)
+        else if (e.key === "Tab" && !e.shiftKey) {
+
+          // ⭐ 마지막 탭이면 기본 동작 허용 → 밖으로 빠져나감
+          if (i === tabs.length - 1) return;
+
+          newIndex = i + 1;
+          e.preventDefault();
+        }
+
+        // SHIFT + TAB (이전)
+        else if (e.key === "Tab" && e.shiftKey) {
+
+          // ⭐ 첫번째 탭이면 기본 동작 허용 → 밖으로 빠져나감
+          if (i === 0) return;
+
+          newIndex = i - 1;
+          e.preventDefault();
+        }
+
+        else {
+          return;
+        }
+
+        tabs[newIndex].focus();
+        this.activateTab(tabs[newIndex], wrap);
+      });
+    });
+  }
+
+
+// 선택한 탭만 활성화하고 나머지 숨기기
+  activateTab(selectedTab) {
+    const allTabs = document.querySelectorAll('[role="tab"]');
+    const allPanels = document.querySelectorAll('[role="tabpanel"]');
+    const wrap = selectedTab.closest('.tab-wrap');
+    const isFraternalMobile = this.isMobile && wrap?.getAttribute('data-tab') === 'fraternal';
+
+    // 모바일에서 active 탭 클릭 시 opened 토글
+    if (isFraternalMobile && selectedTab.classList.contains('active')) {
+      let isOpened; // 토글
+      if (selectedTab.classList.contains('opened')) {
+        selectedTab.classList.remove('opened');
+        isOpened=false
+      } else {
+        selectedTab.classList.add('opened');
+        isOpened=true
+      }
+      if (isOpened) {
+        this.moveActiveTabToTop(wrap);
+      }
+      return;
+    }
+
+    // 모든 탭 비활성화
+    allTabs.forEach(tab => {
+      tab.classList.remove('active', 'opened'); // 모바일 토글 제거 포함
+      tab.setAttribute('aria-selected', 'false');
+      tab.tabIndex = -1;
+    });
+
+    // 모든 패널 숨기기
+    allPanels.forEach(panel => panel.hidden = true);
+
+    // 선택된 탭 활성화
+    selectedTab.classList.add('active');
+    selectedTab.setAttribute('aria-selected', 'true');
+    selectedTab.tabIndex = 0;
+
+    // 연결된 패널 표시
+    const targetId = selectedTab.getAttribute('aria-controls');
+    if (targetId) {
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.hidden = false;
+      }
+    }
+    // ⭐⭐⭐ 이미지도 같이 전환 ⭐⭐⭐
+    this.updateImageByTabIndex(wrap, selectedTab);
+
+    // 모바일 fraternal이면 선택된 탭 상단으로 이동
+    if (isFraternalMobile) {
+      this.moveActiveTabToTop(wrap);
+    }
+  }
+  updateImageByTabIndex(wrap, selectedTab) {
+    const tabs = Array.from(wrap.querySelectorAll('[role="tab"]'));
+    const index = tabs.indexOf(selectedTab);
+
+    // .img-wrap 기준은 tab-wrap과 동일한 상위 컨테이너에 있다고 가정
+    const imgWrap = wrap.parentElement.querySelector('.img-wrap');
+    if (!imgWrap) return;
+
+    const images = imgWrap.querySelectorAll('img');
+
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+    });
+  }
+
+  moveActiveTabToTop(wrap) {
+    const activeTab = wrap.querySelector('[role="tab"].active');
+    if (activeTab && this.isMobile) wrap.insertBefore(activeTab, wrap.firstChild);
+
+  }
+
+  saveOriginalOrder(wrap) {
+    const tabs = Array.from(wrap.querySelectorAll('[role="tab"]'));
+    if (!tabs.length) return;
+    const id = wrap.dataset.tabSetId || (wrap.dataset.tabSetId = `tabset-${Date.now()}`);
+    if (!this.tabSets.has(id)) this.tabSets.set(id, tabs.map(tab => tab.cloneNode(true)));
+  }
+
+  restoreOriginalOrder(wrap) {
+    const id = wrap.dataset.tabSetId;
+    if (!id || !this.tabSets.has(id)) return;
+
+    const savedTabs = this.tabSets.get(id);
+    const activeTabId = wrap.querySelector('[role="tab"].active')?.id; // 현재 active 기억
+
+    wrap.innerHTML = '';
+    savedTabs.forEach(tab => {
+      const newTab = tab.cloneNode(true);
+      if (newTab.id === activeTabId) {
+        newTab.classList.add('active');
+        newTab.setAttribute('aria-selected', 'true');
+        newTab.tabIndex = 0;
+      } else {
+        newTab.classList.remove('active');
+        newTab.setAttribute('aria-selected', 'false');
+        newTab.tabIndex = -1;
+      }
+      wrap.appendChild(newTab);
+    });
+
+    this.reattachEventListeners(wrap);
+  }
+
+
+  reattachEventListeners() {
+    document.querySelectorAll('.tab-wrap').forEach(wrap => this.attachEventListeners(wrap));
+  }
+}
+// class TabManager {
+//   constructor(lang = 'ko') {
+//     this.isMobile = window.innerWidth <= 1024;
+//     this.init();
+//     window.addEventListener('resize', () => this.handleResize());
+//   }
+//
+//   handleResize() {
+//     const wasMobile = this.isMobile;
+//     this.isMobile = window.innerWidth <= 1024;
+//
+//     // fraternal인 경우 PC ↔ 모바일 전환 시 탭 위치 조절
+//     document.querySelectorAll('.tab-wrap[data-tab="fraternal"]').forEach(wrap => {
+//       if (!wasMobile && this.isMobile) {
+//         // PC → 모바일
+//         this.moveActiveTabToTop(wrap);
+//         wrap.querySelectorAll('[role="tab"]').forEach(tab => tab.classList.remove('opened'));
+//       } else if (wasMobile && !this.isMobile) {
+//         wrap.querySelectorAll('[role="tab"]').forEach(tab => tab.classList.remove('opened'));
+//       }
+//     });
+//   }
+//
+//   init() {
+//     const tabWraps = document.querySelectorAll('.tab-wrap');
+//
+//     tabWraps.forEach(wrap => {
+//       this.attachEventListeners(wrap);
+//     });
+//
+//     // 초기 활성 탭 실행
+//     const firstActive = document.querySelector('[role="tab"][aria-selected="true"]')
+//       || document.querySelector('[role="tab"]');
+//
+//     if (firstActive) {
+//       this.activateTab(firstActive);
+//     }
+//   }
+//
+//   attachEventListeners(wrap) {
+//     const tabs = wrap.querySelectorAll('[role="tab"]');
+//     tabs.forEach(tab => {
+//       tab.addEventListener('click', () => this.activateTab(tab));
+//     });
+//   }
+//
+//   activateTab(selectedTab) {
+//     const allTabs = document.querySelectorAll('[role="tab"]');
+//     const allPanels = document.querySelectorAll('[role="tabpanel"]');
+//     const wrap = selectedTab.closest('.tab-wrap');
+//     const isFraternalMobile = this.isMobile && wrap?.getAttribute('data-tab') === 'fraternal';
+//
+//     // 모바일에서 opened 토글 기능 그대로 유지
+//     if (isFraternalMobile && selectedTab.classList.contains('active')) {
+//       let isOpened;
+//       if (selectedTab.classList.contains('opened')) {
+//         selectedTab.classList.remove('opened');
+//         isOpened = false;
+//       } else {
+//         selectedTab.classList.add('opened');
+//         isOpened = true;
+//       }
+//       if (isOpened) this.moveActiveTabToTop(wrap);
+//       return;
+//     }
+//
+//     // 모든 탭 비활성화
+//     allTabs.forEach(tab => {
+//       tab.classList.remove('active', 'opened');
+//       tab.setAttribute('aria-selected', 'false');
+//       tab.tabIndex = -1;
+//     });
+//
+//     // 패널 숨기기
+//     allPanels.forEach(panel => panel.hidden = true);
+//
+//     // 선택된 탭 활성화
+//     selectedTab.classList.add('active');
+//     selectedTab.setAttribute('aria-selected', 'true');
+//     selectedTab.tabIndex = 0;
+//
+//     // 패널 표시
+//     const targetId = selectedTab.getAttribute('aria-controls');
+//     const targetPanel = document.getElementById(targetId);
+//     if (targetPanel) {
+//       targetPanel.hidden = false;
+//     }
+//
+//     // ⭐⭐⭐ 이미지도 같이 전환 ⭐⭐⭐
+//     this.updateImageByTabIndex(wrap, selectedTab);
+//
+//     // 모바일 fraternal이면 탭 상단 이동
+//     if (isFraternalMobile) {
+//       this.moveActiveTabToTop(wrap);
+//     }
+//   }
+//
+//   updateImageByTabIndex(wrap, selectedTab) {
+//     const tabs = Array.from(wrap.querySelectorAll('[role="tab"]'));
+//     const index = tabs.indexOf(selectedTab);
+//
+//     // .img-wrap 기준은 tab-wrap과 동일한 상위 컨테이너에 있다고 가정
+//     const imgWrap = wrap.parentElement.querySelector('.img-wrap');
+//     if (!imgWrap) return;
+//
+//     const images = imgWrap.querySelectorAll('img');
+//
+//     images.forEach((img, i) => {
+//       img.classList.toggle('active', i === index);
+//     });
+//   }
+//
+//
+//   moveActiveTabToTop(wrap) {
+//     const activeTab = wrap.querySelector('[role="tab"].active');
+//     if (!activeTab || !this.isMobile) return;
+//
+//     wrap.insertBefore(activeTab, wrap.firstChild);
+//   }
+// }
+
 /*  ----------------------------------------------------------- */
 /* ----------------------------------------------------------- */
 // 실행함수
