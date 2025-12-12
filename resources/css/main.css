@@ -130,5 +130,96 @@ footer > .inner-wrap {max-width:1367px;width:100%;margin:0 auto;height:100%;disp
 
 @media (max-width:500px) {
   footer > .inner-wrap {padding:0 16px;}
+}
 
+/* 안내지도 */
+.map-box {width:100%;height:646px;position:relative;border-radius:20px;overflow:hidden;background-color:lightgray;display:flex;align-items:center;justify-content:center;}
+
+@media (max-width:650px) {
+  .map-box {height:416px;}
+}
+
+/* 촬영안내 > qr */
+.qr-wrap {display:flex;flex-direction:column;align-items:center;gap:24px;}
+.qr-wrap > p {font-size:18px;font-weight:var(--fw-medium);color:var(--color-gray4);line-height:1.5;text-align:center;}
+.qr-wrap > img {width:280px;}
+
+@media (max-width: 650px) {
+  .qr-wrap > p {font-size:14px;}
+  .qr-wrap > img {width:240px;}
+}
+
+/* Faq */
+.faq-list {display:flex;flex-direction:column;gap:12px;}
+.faq-item {display:flex;flex-direction:column;}
+.faq-item .faq-body {height:0;max-height:0;padding:0;overflow:hidden;transition:height 0.3s;}
+.faq-head {display:flex;justify-content:space-between;align-items:center;padding:48px;border-radius:20px;border-width:1px 1px 0 1px;border-style:solid;border-color:var(--border-color);}
+.faq-question {width:calc(100% - 56px);}
+.faq-question > h3 {display:flex;align-items:flex-start;gap:12px;}
+.faq-question > h3 > span {font-size:30px;font-weight:var(--fw-semi-bold);line-height:1.5;}
+.faq-question > h3 > span.f-tit {color:var(--color-gray4);}
+.faq-body {padding:48px;background-color:var(--bg-color-gray);border-radius:0 0 20px 20px;display:flex;flex-direction:column;gap:12px}
+.faq-body span.c-green {font-size:30px;font-weight:var(--fw-semi-bold);line-height:1.5;}
+.faq-body span.c-green + p {font-size:18px;font-weight:var(--fw-regular);color:var(--color-gray4);line-height:1.5;}
+.faq-btn {width:40px;height:40px;border-radius:50%;border:1px solid var(--border-color);position:relative;}
+.faq-btn::after {content:'';width:16px;height:16px;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background-image:url("../images/icons/ico_arrow_down_black.svg");background-position:center center;background-repeat:no-repeat;background-size:16px;}
+.faq-item .faq-head {border-bottom:1px solid var(--border-color);}
+.faq-item[aria-expanded="true"] {border:2px solid var(--main-color);border-radius:20px;box-shadow: 0 0 12px 0 #00000040;}
+.faq-item[aria-expanded="true"] .faq-head {border-bottom:0;border-radius:20px 20px 0 0;}
+.faq-item[aria-expanded="true"] .faq-body {max-height: 1000px;height:100%;padding:48px;}
+.faq-item[aria-expanded="true"] .faq-btn::after {transform:translate(-50% ,-50%) rotate(-180deg);}
+
+@media (max-width:650px) {
+  .faq-head {padding:24px;border-radius:12px;}
+  .faq-question {width:calc(100% - 48px);}
+  .faq-question > h3 {flex-direction:column;align-items:flex-start;gap:12px;}
+  .faq-question > h3 > span {font-size:20px;font-weight:var(--fw-bold);}
+  .faq-btn {width:24px;height:24px;background-size:16px;}
+  .faq-body {padding: 24px;}
+  .faq-item[aria-expanded="true"] .faq-body {padding:24px;}
+  .faq-body span.c-green {font-size:20px;}
+  .faq-body span.c-green + p {font-size:14px;}
+}
+
+/* 둘러보기 */
+.browse-list {display:flex;flex-direction:column;gap:60px;}
+.browse-box {display:flex;align-items:center;gap:48px;}
+.browse-box:nth-child(2n - 1) {flex-direction:row-reverse;}
+.browse-box .img-wrap {width:764px;height:440px;border-radius:20px;overflow:hidden;}
+.browse-box .img-wrap > img {width:100%;height: 100%;object-fit:cover;object-position:center center;}
+.browse-box .desc-wrap {flex:1;}
+.b-tit-wrap {display:flex;flex-direction:column;align-items:flex-start;margin-bottom:24px;}
+.b-num {font-size:56px;font-weight:var(--fw-extra-bold);color:var(--color-gray5);}
+.b-tit {font-size:40px;font-weight:var(--fw-semi-bold);color:var(--color-black);line-height: 1.3;}
+.b-desc {font-size:18px;font-weight:var(--fw-regular);color:var(--color-gray);line-height:1.5;}
+.b-desc ul,
+.b-desc ul > li {font-size:inherit;color:inherit;line-height:inherit;}
+
+@media (max-width:1400px) {
+  .browse-box .img-wrap {width: 600px;height: 380px;}
+}
+@media (max-width: 1024px) {
+  .browse-list {gap:36px;}
+  .browse-box .img-wrap {width: 100%;height: 310px;}
+  .browse-box {flex-direction:column-reverse;gap:18px;}
+  .browse-box:nth-child(2n - 1) {flex-direction:column-reverse;gap:18px;}
+  .browse-box .desc-wrap {width:100%;}
+}
+
+@media (max-width:650px) {
+  .browse-box .img-wrap {height: 240px;}
+  .b-tit-wrap {margin-bottom:18px;}
+  .b-num {font-size:36px;}
+  .b-tit {font-size:24px;}
+  .b-desc {font-size:14px;color:var(--color-gray7);}
+}
+
+/* 공원소개 */
+.img-rounded-wrap {width: 100%;height:600px;border-radius:20px;overflow:hidden;margin:36px 0;}
+.img-rounded-wrap > img {width:100%;height:100%;object-fit:cover;object-position:center center;}
+@media (max-width: 1024px) {
+  .img-rounded-wrap {height: 400px;}
+}
+@media (max-width: 650px) {
+  .img-rounded-wrap {height:154px;border-radius:12px;margin:18px 0;}
 }

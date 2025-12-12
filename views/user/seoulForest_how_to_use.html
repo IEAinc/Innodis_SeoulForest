@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang=ko>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- css -->
+  <link rel="stylesheet" href="../../resources/css/main.css">
+  <link rel="stylesheet" href="../../resources/lib/swiper/swiper.css">
+
+  <!-- lib -->
+  <script src="../../resources/lib/jquery-1.11.3.min.js"></script>
+  <script src="../../resources/lib/swiper/swiper.js"></script>
+
+  <!-- js -->
+  <script src="../../resources/js/main.js"></script>
+
+  <title>서울숲 > 사용안내</title>
+</head>
+<body>
+<!-- [웹 접근성] : 본문 바로가기 -->
+<a href="#main" id="skip-nav">본문 바로가기</a>
+<!-- 헤더 -->
+<header>
+  <!-- [사이드바] dim 처리 영역 -->
+  <div id="dim-overlay" class="dim" onclick="closeSideBar();"></div>
+  <div class="inner-wrap">
+    <!-- 로고 -->
+    <h1>
+      <a href="#">
+        <img src="../../resources/images/header/logo.svg" alt="서울의 공원">
+      </a>
+    </h1>
+    <!-- gnb -->
+    <nav>
+      <!-- pc -->
+      <ul class="pc-nav pc-flex-only">
+        <li>
+          <button type="button"><span>서울숲</span></button>
+          <ul>
+            <li><a href="#">공원소개</a></li>
+            <li><a href="#">이용시간</a></li>
+            <li><a href="#">주차안내</a></li>
+            <li><a href="#">둘러보기</a></li>
+            <li><a href="#">사용안내</a></li>
+            <li><a href="#">촬영안내</a></li>
+            <li><a href="#" class="link">공원탐방</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button"><span>공원소식</span></button>
+          <ul>
+            <li><a href="#">프로그램</a></li>
+            <li><a href="#">새소식</a></li>
+            <li><a href="#">고시·공고</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button"><span>안내지도</span></button>
+          <ul>
+            <li><a href="#" class="link">안내지도</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button"><span>자료실</span></button>
+          <ul>
+            <li><a href="#">동영상</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button"><span>고객센터</span></button>
+          <ul>
+            <li><a href="#">문의전화</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- mobile -->
+      <div class="sidebar tablet-mo-only">
+        <div class="sidebar-top">
+          <!-- 언어 설정 -->
+          <h2><img src="../../resources/images/header/logo.svg" alt="서울의 공원"/></h2>
+          <!-- 닫기 버튼 -->
+          <button type="button" class="ico-btn ico-close" onclick="closeSideBar()"><span class="visually-hidden">닫기</span></button>
+        </div>
+        <ul class="accordion-nav-list">
+          <li class="active">
+            <button type="button" class="active">서울숲</button>
+            <ul>
+              <li class="active"><a href="#">공원소개</a></li>
+              <li><a href="#">이용시간</a></li>
+              <li><a href="#">주차안내</a></li>
+              <li><a href="#">둘러보기</a></li>
+              <li><a href="#">사용안내</a></li>
+              <li><a href="#">촬영안내</a></li>
+              <li><a href="#">공원탐방</a></li>
+            </ul>
+          </li>
+          <li>
+            <button type="button">공원소식</button>
+            <ul>
+              <li><a href="#">프로그램</a></li>
+              <li><a href="#">새소식</a></li>
+              <li><a href="#">고시·공고</a></li>
+            </ul>
+          </li>
+          <li>
+            <button type="button">안내지도</button>
+            <ul>
+              <li><a href="#">안내지도</a></li>
+            </ul>
+          </li>
+          <li class="long">
+            <button type="button">자료실</button>
+            <ul>
+              <li><a href="#">동영상</a></li>
+            </ul>
+          </li>
+          <li class="long">
+            <button type="button">고객센터</button>
+            <ul>
+              <li><a href="#">문의전화</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- hamburger (mobile) -->
+    <button type="button" class="ico-btn ico-hamburger tablet-mo-flex-only" onclick="openSideBar()"><span class="visually-hidden">메뉴 열기</span></button>
+  </div>
+</header>
+
+<!-- 메인 -->
+<main id="main">
+  <!-- 서브 페이지 텍스트 -->
+  <div class="sub-title-wrap">
+    <div class="sub-title">
+      <h2>사용안내</h2>
+      <div class="breadcrumb">
+        <span class="home"><span class="visually-hidden">경로</span></span>
+        <ul>
+          <li>서울숲</li>
+          <li class="present">사용안내</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 서브 페이지 -->
+  <div class="sub-inner-wrap">
+    <section class="sub-sec">
+      <div class="sub-sec-tit-wrap">
+        <h3>사용안내</h3>
+      </div>
+      <div class="c-box">
+        <!-- a. 컨텐츠 제목 -->
+        <div class="content-tit-wrap">
+          <h4>장소사용안내</h4>
+        </div>
+        <div class="gray-box">
+          서울숲 장소사용 및 대관은 사전 협의자에 한하며, 신청전 사전 문의(02-460-2973, js8209@seoul.go.kr)
+        </div>
+      </div>
+      <div class="c-box">
+        <!-- a. 컨텐츠 제목 -->
+        <div class="content-tit-wrap">
+          <h4>도시공원시설 이용시 준수사항</h4>
+        </div>
+        <div class="gray-box">
+          <ul class="circle-num-list">
+            <li class="circle-num">
+              <span>1</span>
+              <p>
+                공원 이용은 허가 받은 자에 한하며, 반드시 이용승낙서를 지참하여 공원 관계 직원의 요청 시 제시하여야 한다.
+              </p>
+            </li>
+            <li class="circle-num">
+              <span>2</span>
+              <p>
+                공원 이용은 <em class="c-point">허가받은 장소와 시간</em> 으로 제한하며, 변경 시에는 사전 신고 후 허가를 득하여야 한다.
+              </p>
+            </li>
+            <li class="circle-num">
+              <span>3</span>
+              <p>
+                공원 이용 시 시설물과 수목을 훼손하는 일이 없도록 하고, 훼손 시에는 변상조치를 하여야 한다.
+              </p>
+            </li>
+            <li class="circle-num">
+              <span>4</span>
+              <p>
+                공원 진입 및 이동시 공원 시설물 파손 우려가 있으므로 <em class="c-point"> 차량 이용을 금지</em>한다.
+              </p>
+            </li>
+            <li class="circle-num">
+              <span>5</span>
+              <p>공원 내에서는 <em class="c-point">화기사용과 각종 취사행위(뷔페포함)는 일절 금지</em> 한다.</p>
+            </li>
+            <li class="circle-num">
+              <span>6</span>
+              <p>공원 내에서는 <em class="c-point">음주, 가무 등 유흥행위와 고성방가 하는 일이 없도록</em> 한다.</p>
+            </li>
+            <li class="circle-num">
+              <span>7</span>
+              <p>잔디밭을 손상시키는 <em class="c-point">구기운동을 하지 않아야</em> 하며, 훼손 시 복구하여야 한다.</p>
+            </li>
+            <li class="circle-num">
+              <span>8</span>
+              <p>공원 내에서 발생되는 <em class="c-point">쓰레기는 직접 수거 되가져가거나</em> 종량제 쓰레기 봉투에 담아 지정된 장소에 모아 두어야 한다.</p>
+            </li>
+            <li class="circle-num">
+              <span>9</span>
+              <p>공원 내에는 일체 영구 및 임시 시설물은 허가 없이 설치할 수 없다.</p>
+            </li>
+            <li class="circle-num">
+              <span>10</span>
+              <p>
+                승락 조건을 위반하여 무단시설물을 설치하거나 출입이 금지된 지역을 출입할 수 없으며, 공원시설물을 훼손 하였을 경우 사용자 부담으로 원상복구 하여야 한다.<br class="pc-tablet-only"/>
+                (도시공원 및 녹지 등에 관한 법률 시행령 제50조)<br/>
+                ※ 공원 및 광장 내 무단 차량 진입 및 통행시 CCTV 채증자료 확보 후 고발조치.
+              </p>
+            </li>
+            <li class="circle-num">
+              <span>11</span>
+              <p>
+                공원이용자의 안전과 불편을 방지하기 위하여 필요한 경우 사용자측에서 질서계도 등 안전요원을 배치·운영하여야 하며, 제기되는 민원과 일체의 사고에 대하여<br/>
+                민·형사상 책임을 져야 한다.
+              </p>
+            </li>
+            <li class="circle-num">
+              <span>12</span>
+              <p>드론, 비행장치 촬영 시 군부대(수도방위사령부)의 승인을 미리 받아야 한다.</p>
+            </li>
+            <li class="circle-num">
+              <span>13</span>
+              <p>공원 내 텐트(간이텐트) · 그늘막 · 천막 · 현수막 등 설치할 수 없다.</p>
+            </li>
+            <li class="circle-num">
+              <span>14</span>
+              <div>
+                <p>다음의 경우 공원이용 예약을 취소할 수 있다.</p>
+                <ul>
+                  <li>가. 국가나 지방자치단체가 이용할 경우</li>
+                  <li>나. 공공, 공익행사 등 구청장이 승인하는 행사가 있을 경우</li>
+                  <li>다. 기타 등</li>
+                </ul>
+              </div>
+            </li>
+
+          </ul>
+          <div class="btn-wrap">
+            <a href="777.txt" download="" class="ico-txt-btn ico-download right-ver fw-bold">장소사용신청서 (서울숲 야외공간)</a>
+            <a href="777.txt" download="" class="ico-txt-btn ico-download right-ver fw-bold bg-light-green">장소사용신청서 (서울숲 커뮤니티센터)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+
+<!-- 푸터 -->
+<footer>
+  <div class="inner-wrap">
+    <div class="footer-top">
+      <div class="footer-info">
+        <ul>
+          <li><a href="#">홈페이지 바로잡기</a></li>
+          <li><a href="#">조직 및 업무 검색</a></li>
+          <li><a href="#">다산콜센터</a></li>
+          <li class="point"><a href="#">공원주요연락처</a></li>
+        </ul>
+      </div>
+      <div class="footer-lang-wrap">
+        <img src="../../resources/images/footer/footer_logo1.png" alt="응답소"/>
+        <a href="#" target="_blank" title="페이스북 새 창 열기"><img src="../../resources/images/footer/sns_facebook.svg" alt="페이스북"/></a>
+        <div class="custom-select" data-options="1">
+          <button type="button" class="select-toggle" aria-haspopup="listbox" aria-expanded="false">
+            <span class="selected-text"></span>
+          </button>
+          <ul class="select-list" role="listbox" aria-hidden="true"></ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="f-bottom-wrap">
+        <h4><img src="../../resources/images/footer/logo_footer.svg" alt="서울의 공원"/></h4>
+        <ul>
+          <li>(04514) 서울특별시 중구 서소문로 124 씨티스퀘어 8층 ㅣ 02)120</li>
+          <li>COPYRIGHT©2026 SEOUL METROPOLITAN GOVERNMENT. ALL RIGHTS RESERVED</li>
+        </ul>
+      </div>
+      <a href="#" target="_blank" title="다산콜센터 120 전화걸기" class="f-call">
+        <span class="f-tit">다산콜센터</span>
+        <span class="f-phone-num">120</span>
+      </a>
+
+    </div>
+  </div>
+</footer>
+<script>
+</script>
+</body>
+</html>

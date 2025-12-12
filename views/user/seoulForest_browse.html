@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang=ko>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- css -->
+  <link rel="stylesheet" href="../../resources/css/main.css">
+  <link rel="stylesheet" href="../../resources/lib/swiper/swiper.css">
+
+  <!-- lib -->
+  <script src="../../resources/lib/jquery-1.11.3.min.js"></script>
+  <script src="../../resources/lib/swiper/swiper.js"></script>
+
+  <!-- js -->
+  <script src="../../resources/js/main.js"></script>
+
+  <title>서울숲 > 둘러보기</title>
+</head>
+<body>
+<!-- [웹 접근성] : 본문 바로가기 -->
+<a href="#main" id="skip-nav">본문 바로가기</a>
+<!-- 헤더 -->
+<header>
+  <!-- [사이드바] dim 처리 영역 -->
+  <div id="dim-overlay" class="dim" onclick="closeSideBar();"></div>
+  <div class="inner-wrap">
+    <!-- 로고 -->
+    <h1>
+      <a href="#">
+        <img src="../../resources/images/header/logo.svg" alt="서울의 공원">
+      </a>
+    </h1>
+    <!-- gnb -->
+    <nav>
+      <!-- pc -->
+      <ul class="pc-nav pc-flex-only">
+        <li>
+          <button type="button"><span>서울숲</span></button>
+          <ul>
+            <li><a href="#">공원소개</a></li>
+            <li><a href="#">이용시간</a></li>
+            <li><a href="#">주차안내</a></li>
+            <li><a href="#">둘러보기</a></li>
+            <li><a href="#">사용안내</a></li>
+            <li><a href="#">촬영안내</a></li>
+            <li><a href="#" class="link">공원탐방</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button"><span>공원소식</span></button>
+          <ul>
+            <li><a href="#">프로그램</a></li>
+            <li><a href="#">새소식</a></li>
+            <li><a href="#">고시·공고</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button"><span>안내지도</span></button>
+          <ul>
+            <li><a href="#" class="link">안내지도</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button"><span>자료실</span></button>
+          <ul>
+            <li><a href="#">동영상</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button"><span>고객센터</span></button>
+          <ul>
+            <li><a href="#">문의전화</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- mobile -->
+      <div class="sidebar tablet-mo-only">
+        <div class="sidebar-top">
+          <!-- 언어 설정 -->
+          <h2><img src="../../resources/images/header/logo.svg" alt="서울의 공원"/></h2>
+          <!-- 닫기 버튼 -->
+          <button type="button" class="ico-btn ico-close" onclick="closeSideBar()"><span class="visually-hidden">닫기</span></button>
+        </div>
+        <ul class="accordion-nav-list">
+          <li class="active">
+            <button type="button" class="active">서울숲</button>
+            <ul>
+              <li class="active"><a href="#">공원소개</a></li>
+              <li><a href="#">이용시간</a></li>
+              <li><a href="#">주차안내</a></li>
+              <li><a href="#">둘러보기</a></li>
+              <li><a href="#">사용안내</a></li>
+              <li><a href="#">촬영안내</a></li>
+              <li><a href="#">공원탐방</a></li>
+            </ul>
+          </li>
+          <li>
+            <button type="button">공원소식</button>
+            <ul>
+              <li><a href="#">프로그램</a></li>
+              <li><a href="#">새소식</a></li>
+              <li><a href="#">고시·공고</a></li>
+            </ul>
+          </li>
+          <li>
+            <button type="button">안내지도</button>
+            <ul>
+              <li><a href="#">안내지도</a></li>
+            </ul>
+          </li>
+          <li class="long">
+            <button type="button">자료실</button>
+            <ul>
+              <li><a href="#">동영상</a></li>
+            </ul>
+          </li>
+          <li class="long">
+            <button type="button">고객센터</button>
+            <ul>
+              <li><a href="#">문의전화</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- hamburger (mobile) -->
+    <button type="button" class="ico-btn ico-hamburger tablet-mo-flex-only" onclick="openSideBar()"><span class="visually-hidden">메뉴 열기</span></button>
+  </div>
+</header>
+
+<!-- 메인 -->
+<main id="main">
+  <!-- 서브 페이지 텍스트 -->
+  <div class="sub-title-wrap">
+    <div class="sub-title">
+      <h2>둘러보기</h2>
+      <div class="breadcrumb">
+        <span class="home"><span class="visually-hidden">경로</span></span>
+        <ul>
+          <li>서울숲</li>
+          <li class="present">둘러보기</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 서브 페이지 -->
+  <div class="sub-inner-wrap">
+    <section class="sub-sec">
+      <div class="sub-sec-tit-wrap">
+        <h3>둘러보기</h3>
+      </div>
+
+      <!-- 탭 영역 (이미지) -->
+      <div class="img-tab-wrap">
+        <div class="tab-wrap" role="tablist" data-tab="fraternal" aria-label="탭 메뉴">
+          <button id="tab1" type="button" role="tab" aria-controls="panel1" aria-selected="true" tabindex="0" class="active">문화예술시설</button>
+          <button id="tab2" type="button" role="tab" aria-controls="panel2" aria-selected="false" tabindex="-1">생태시설</button>
+          <button id="tab3" type="button" role="tab" aria-controls="panel3" aria-selected="false" tabindex="-1">체험시설</button>
+          <button id="tab4" type="button" role="tab" aria-controls="panel4" aria-selected="false" tabindex="-1">서울숲 가드닝정원현황</button>
+        </div>
+        <div class="img-wrap">
+          <img src="../../resources/images/contents/browse/img1.png" alt="문화예술시설" class="active"/>
+          <img src="../../resources/images/contents/browse/img2.png" alt="생태시설"/>
+          <img src="../../resources/images/contents/browse/img3.png" alt="체험시설"/>
+          <img src="../../resources/images/contents/browse/img4.png" alt="서울숲 가드닝정원현황"/>
+        </div>
+      </div>
+      <!-- //  탭 영역 -->
+
+      <!-- 탭에 해당하는 세부정보 -->
+      <!-- 탭 모음 -->
+      <div class="tab" id="panel1" role="tabpanel" aria-labelledby="tab1">
+        <ul class="browse-list">
+          <!-- 1. 바닥분수 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img1-1.png" alt="바닥분수"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">01</span>
+                <span class="b-tit">바닥분수</span>
+              </div>
+              <div class="b-desc">
+                100개의 노즐에서 다양한 높이와 형태로 연출되는<br class="mo-only"/> 경쾌한 물줄기가<br class="pc-tablet-only"/>
+                바닥에서 힘차게 솟아올라 색다른 물놀이를 제공<br/>
+                바닥분수에서는 안전을 위해 이용수칙을 꼭 지켜주세요.
+              </div>
+            </div>
+          </li>
+          <!-- 2. 겨울연못 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img1.png" alt="겨울연못"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">02</span>
+                <span class="b-tit">겨울연못</span>
+              </div>
+              <div class="b-desc">
+                수심 3cm의 얕은 연못이 주변의 아름다운 경관을<br class="mo-only"/> 한 폭의 그림처럼 담아냄<br/>
+                보는 위치에 따라 다양한 경관이 연출되어 보는 즐거움이<br class="mo-only"/> 더욱 크며,<br class="pc-tablet-only"/>
+                메타세쿼이아가 투영된 멋진 경관을 담으려는 사람들로<br class="mo-only"/> 늘 북적이는<br class="pc-tablet-only"/>
+                서울숲의 유명한 포토 스팟 중 하나임.
+              </div>
+            </div>
+          </li>
+          <!-- 3. 군마상 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img1-3.png" alt="군마상"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">03</span>
+                <span class="b-tit">군마상</span>
+              </div>
+              <div class="b-desc">
+                서울숲이 만들어지기 전, 이곳이 경마장으로 쓰인것을 기념해 제작<br/>
+                서울숲에 들어서면 경마 장면을 역동적으로 표현한 조형물<br/>
+                스타트(START,출발) 이라는 제목을 가진 군마상은<br class="mo-only"/> 새로운 도약을 상징.
+              </div>
+            </div>
+          </li>
+          <!-- 4. 야외무대 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img1-4.png" alt="야외무대"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">04</span>
+                <span class="b-tit">야외무대</span>
+              </div>
+              <div class="b-desc">
+                탁 트인 공간에 조명을 설치하여 분지 형태의 야외모임 공간조성<br/>
+                소규모의 문화 행사등이 진행되는 공간
+              </div>
+            </div>
+          </li>
+          <!-- 5. 가족마당무대 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img1-5.png" alt="가족마당무대"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">05</span>
+                <span class="b-tit">가족마당무대</span>
+              </div>
+              <div class="b-desc">
+                서울숲에 들어서면 만나는 넓은 잔디밭<br/>
+                탁 트인 잔디밭에서 가족, 친구들과 소풍을 즐겨보세요<br/>
+                가족마당에서는 공연, 페스티벌 등 다양한 문화행사가 진행됨.
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="tab" id="panel2" role="tabpanel" aria-labelledby="tab2" hidden>
+        <ul class="browse-list">
+          <!-- 1. 꽃사슴 방사장 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img2.png" alt="꽃사슴 방사장"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">01</span>
+                <span class="b-tit">꽃사슴 방사장</span>
+              </div>
+              <div class="b-desc">
+                서울숲의 상징이기도 한 꽃사슴을 만날 수 있는 공간<br/>
+                꽃사슴 방사장이 있는 생태숲은 운영시간 내에 관람가능
+              </div>
+            </div>
+          </li>
+          <!-- 2. 보행가교 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img2-2.png" alt="보행가교"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">02</span>
+                <span class="b-tit">보행가교</span>
+              </div>
+              <div class="b-desc">
+                서울숲의 공중을 가로질러 바람의 언덕에서 한강공원으로 이어짐<br/>
+                다리 위에서 생태숲을 내려다 볼 수 있어 전망대의 역할도 함
+              </div>
+            </div>
+          </li>
+          <!-- 3. 바람의 언덕 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img2-3.png" alt="겨울연못"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">03</span>
+                <span class="b-tit">바람의 언덕</span>
+              </div>
+              <div class="b-desc">
+                서울숲에서 가장 높은 장소<br/>
+                바람의 언덕에 오르면 한강에서 불어오는 시원한 바람을 느끼며<br class="mo-only"/> 물결치는<br class="pc-tablet-only"/>
+                억새밭을 감상할 수 있음.
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="tab" id="panel3" role="tabpanel" aria-labelledby="tab3" hidden>
+        <ul class="browse-list">
+          <!-- 1. 곤충식물원 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img3.png" alt="곤충식물원"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">01</span>
+                <span class="b-tit">곤충식물원</span>
+              </div>
+              <div class="b-desc">
+                예전 정수장의 급속여과지 건물을 활용해 만든 온실<br class="pc-tablet-only"/>
+                평소에는<br class="mo-only"/> 보기 어려운 100여종의 열대 식물과 곤충, 파충류, 양서류 등을<br/>
+                관람할 수 있음.<br class="pc-tablet-only"/>
+                여름엔 시원하고, 겨울엔 따뜻해 사시사철 인기가 많은 공간임
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="tab" id="panel4" role="tabpanel" aria-labelledby="tab4" hidden>
+        <ul class="browse-list">
+          <!-- 1. 구근정원 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img4.png" alt="구근정원"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">01</span>
+                <span class="b-tit">구근정원</span>
+              </div>
+              <div class="b-desc">
+                숲속 튤립길을 테마로 한 가로형 정원
+                <ul>
+                  <li>- 위치 : 군마상~ 겨울연못 옆 ~ 물놀이터</li>
+                  <li>- 면적 : 4,000㎡</li>
+                  <li>- 수종 : 튤립, 수선화 등 60,000본</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <!-- 2. 갤러리 정원 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img4-2.png" alt="갤러리 정원"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">02</span>
+                <span class="b-tit">갤러리 정원</span>
+              </div>
+              <div class="b-desc">
+                옛 정수장 침전조의 구조물을 그대로 활용하여, 형형색색의 아름다운 꽃과<br/>
+                덩굴식물이 어우러진 정원
+                <ul>
+                  <li>- 위치 : 서울숲 나비정원 앞</li>
+                  <li>- 규모 : 1,600㎡</li>
+                  <li>- 조성연도 : 2005년도(최초 조성)</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <!-- 3. 어린이 정원(엄마의 정원) -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img4-3.png" alt="어린이정원(엄마의 정원)"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">03</span>
+                <span class="b-tit">어린이 정원(엄마의 정원)</span>
+              </div>
+              <div class="b-desc">
+                엄마가 읽어주는 동화를 테마로 한 정원
+                <ul>
+                  <li>- 위치 : 가족마당 뒤</li>
+                  <li>- 규모 : 400㎡</li>
+                  <li>- 조성연도 : 2017년도</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <!-- 4. 꿀벌 정원 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img4-4.png" alt="꿀벌 정원"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">04</span>
+                <span class="b-tit">꿀벌 정원</span>
+              </div>
+              <div class="b-desc">
+                꿀벌을 테마로 한 밀원식물정원
+                <ul>
+                  <li>- 위치 : 뚝도 아리수 정수센터 잔디밭</li>
+                  <li>- 규모 : 505.9㎡</li>
+                  <li>- 조성연도 : 2017년도</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <!-- 5. 도시락 정원 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img4-5.png" alt="도시락 정원"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">05</span>
+                <span class="b-tit">도시락 정원</span>
+              </div>
+              <div class="b-desc">
+                친환경적인 도시락문화를 권장하는 피크닉 정원
+                <ul>
+                  <li>- 위치 : 가족마당 살구나무 옆</li>
+                  <li>- 규모 : 1,000㎡</li>
+                  <li>- 조성년도 : 2018년도</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <!-- 6. 설렘 정원 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img4-6.png" alt="설렘 정원"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">05</span>
+                <span class="b-tit">설렘 정원</span>
+              </div>
+              <div class="b-desc">
+                미세먼지를 저감시키고 아늑함을 주는 다층의 숲, 행복이 담긴 열매의 정원 · 외주
+                <ul>
+                  <li>- 위치 : 원형마당</li>
+                  <li>- 규모 : 371㎡</li>
+                  <li>- 조성연도 : 2019년</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <!-- 7. 벤치 가든 1호 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img4-7.png" alt="벤치 가든 1호"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">07</span>
+                <span class="b-tit">벤치 가든 1호</span>
+              </div>
+              <div class="b-desc">
+                연중 다양한 종류의 꽃을 볼 수 있는 모퉁이 정원
+                <ul>
+                  <li>- 위치 : 야외무대-가족마당 사이 경계구간</li>
+                  <li>- 규모 : 150㎡</li>
+                  <li>- 조성연도 : 2019년도</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <!-- 8. 벤치 가든 2호 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img4-8.png" alt="벤치 가든 2호"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">08</span>
+                <span class="b-tit">벤치 가든 2호</span>
+              </div>
+              <div class="b-desc">
+                벤치를 중심으로 한 주변 경관 개선을 위한 미니가든
+                <ul>
+                  <li>- 위치 : 사과나무길 앞</li>
+                  <li>- 규모 : 40㎡(벤치1개)</li>
+                  <li>- 조성연도 : 2020년도</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <!-- 9. 벤치 가든 3호 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img4-9.png" alt="벤치 가든 3호"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">09</span>
+                <span class="b-tit">벤치 가든 3호</span>
+              </div>
+              <div class="b-desc">
+                벤치를 중심으로 한 주변 경관 개선을 위한 미니가든 조성
+                <ul>
+                  <li>- 위치 : 무지개 언덕</li>
+                  <li>- 규모 : 30㎡(벤치 2개)</li>
+                  <li>- 조성연도 : 2020년도</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <!-- 10. 느린 산책의 정원, 수국길 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img4-10.png" alt="느린 산책의 정원, 수국길"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">10</span>
+                <span class="b-tit">느린산책의 정원, 수국길</span>
+              </div>
+              <div class="b-desc">
+                도시인의 바쁜 시간을 자연의 ‘느린 시간‘이 치유해 주길<br class="mo-only"/> 바라는 마음의 정원
+                <ul>
+                  <li>- 위치 : 5번 출입구와 어린이 정원 사이</li>
+                  <li>- 규모 : 300㎡</li>
+                  <li>- 조성연도 : 2020년도</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <!-- 11. 겨울 정원 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img4-11.png" alt="겨울 정원"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">11</span>
+                <span class="b-tit">겨울 정원</span>
+              </div>
+              <div class="b-desc">
+                추운 겨울에도 즐길 수 있는 다채로운 숲 정원
+                <ul>
+                  <li>- 위치 : 숲속빈터</li>
+                  <li>- 규모 : 800㎡</li>
+                  <li>- 조성연도 : 2020년도</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <!-- 12. 쉬었다가 길 정원 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img4-12.png" alt="쉬었다가 길 정원"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">12</span>
+                <span class="b-tit">쉬었다가 길 정원</span>
+              </div>
+              <div class="b-desc">
+                <ul>
+                  <li>- 위치 : 체육공원</li>
+                  <li>- 규모 : 600㎡</li>
+                  <li>- 조성연도 : 2021년도</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <!-- 13. 겨울 정원 (Ⅱ) -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img4-13.png" alt="겨울 정원 (Ⅱ)"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">13</span>
+                <span class="b-tit">겨울 정원 (Ⅱ)</span>
+              </div>
+              <div class="b-desc">
+                추운 겨울에도 즐길 수 있는 다채로운 숲 정원, 숲속빈터,<br class="mo-only"/> 2개의 포켓형 녹지공간에<br class="pc-tablet-only"/> 이끼정원, 자작나무 숲 속<br class="mo-only"/> 미니온실정원 조성
+                <ul>
+                  <li>- 위치 : 숲속 빈터</li>
+                  <li>- 규모 : 800㎡</li>
+                  <li>- 조성년도 : 2021년도</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <!-- 14. 중앙호수 친수공간 조성 (3멍가든) -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img4-14.png" alt="중앙호수 친수공간 조성 (3멍가든)"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">14</span>
+                <span class="b-tit">중앙호수 친수공간 조성 (3멍가든)</span>
+              </div>
+              <div class="b-desc">
+                ‘호숫가’라는 장소성을 반영하여 휴게공간이 특화된<br class="mo-only"/> 새로운 형태의 산책로 조성,<br class="pc-tablet-only"/>
+                교목 위주의 공간을 관목과 초화로<br class="mo-only"/> 어우러진 다양한 식생의 공간으로 재생
+                <ul>
+                  <li>- 위치 : 중앙호수 산책로</li>
+                  <li>- 규모 : 400㎡(산책로 55m)</li>
+                  <li>- 조성연도 : 2021년도</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <!-- 15. 포레스트 가든 (Forest garden) -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img4-15.png" alt="포레스트 가든 (Forest garden)"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">15</span>
+                <span class="b-tit">포레스트 가든 (Forest garden)</span>
+              </div>
+              <div class="b-desc">
+                <ul>
+                  <li>- 위치 : 수국정원 옆(연계)</li>
+                  <li>- 규모 : 400㎡</li>
+                  <li>- 조성년도 : 2021년도</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <!-- 16. 중앙호수 윈터 가든 -->
+          <li class="browse-box">
+            <div class="img-wrap">
+              <img src="../../resources/images/contents/browse/img4-16.png" alt="중앙호수 윈터 가든"/>
+            </div>
+            <div class="desc-wrap">
+              <div class="b-tit-wrap">
+                <span class="b-num">16</span>
+                <span class="b-tit">중앙호수 윈터 가든</span>
+              </div>
+              <div class="b-desc">
+                중앙호수 주변 일년초 중심의 식재에서 벗어나<br class="mo-only"/> 지속가능한 다년생 관목 중심으로<br class="pc-tablet-only"/>
+                식재, 수피가 아름다운 관목과<br class="mo-only"/> 겨울에도 푸른 상록성 교관목을 식재하여 겨울철<br class="pc-tablet-only"/>
+                호수경관 개선
+                <ul>
+                  <li>- 위치 : 중앙호수 산책로 주변</li>
+                  <li>- 규모 : 200㎡</li>
+                  <li>- 조성연도 : 2021년도</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- // 탭에 해당하는 세부정보 -->
+    </section>
+  </div>
+
+</main>
+
+
+<!-- 푸터 -->
+<footer>
+  <div class="inner-wrap">
+    <div class="footer-top">
+      <div class="footer-info">
+        <ul>
+          <li><a href="#">홈페이지 바로잡기</a></li>
+          <li><a href="#">조직 및 업무 검색</a></li>
+          <li><a href="#">다산콜센터</a></li>
+          <li class="point"><a href="#">공원주요연락처</a></li>
+        </ul>
+      </div>
+      <div class="footer-lang-wrap">
+        <img src="../../resources/images/footer/footer_logo1.png" alt="응답소"/>
+        <a href="#" target="_blank" title="페이스북 새 창 열기"><img src="../../resources/images/footer/sns_facebook.svg" alt="페이스북"/></a>
+        <div class="custom-select" data-options="1">
+          <button type="button" class="select-toggle" aria-haspopup="listbox" aria-expanded="false">
+            <span class="selected-text"></span>
+          </button>
+          <ul class="select-list" role="listbox" aria-hidden="true"></ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="f-bottom-wrap">
+        <h4><img src="../../resources/images/footer/logo_footer.svg" alt="서울의 공원"/></h4>
+        <ul>
+          <li>(04514) 서울특별시 중구 서소문로 124 씨티스퀘어 8층 ㅣ 02)120</li>
+          <li>COPYRIGHT©2026 SEOUL METROPOLITAN GOVERNMENT. ALL RIGHTS RESERVED</li>
+        </ul>
+      </div>
+      <a href="#" target="_blank" title="다산콜센터 120 전화걸기" class="f-call">
+        <span class="f-tit">다산콜센터</span>
+        <span class="f-phone-num">120</span>
+      </a>
+
+    </div>
+  </div>
+</footer>
+<script>
+  /* 실행문 */
+  document.addEventListener("DOMContentLoaded", () => {
+    new TabManager('en');
+  });
+</script>
+</body>
+</html>

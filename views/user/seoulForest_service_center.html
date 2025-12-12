@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang=ko>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- css -->
+  <link rel="stylesheet" href="../../resources/css/main.css">
+  <link rel="stylesheet" href="../../resources/lib/swiper/swiper.css">
+
+  <!-- lib -->
+  <script src="../../resources/lib/jquery-1.11.3.min.js"></script>
+  <script src="../../resources/lib/swiper/swiper.js"></script>
+
+  <!-- js -->
+  <script src="../../resources/js/main.js"></script>
+
+  <title>고객센터 > FAQ</title>
+</head>
+<body>
+<!-- [웹 접근성] : 본문 바로가기 -->
+<a href="#main" id="skip-nav">본문 바로가기</a>
+<!-- 헤더 -->
+<header>
+  <!-- [사이드바] dim 처리 영역 -->
+  <div id="dim-overlay" class="dim" onclick="closeSideBar();"></div>
+  <div class="inner-wrap">
+    <!-- 로고 -->
+    <h1>
+      <a href="#">
+        <img src="../../resources/images/header/logo.svg" alt="서울의 공원">
+      </a>
+    </h1>
+    <!-- gnb -->
+    <nav>
+      <!-- pc -->
+      <ul class="pc-nav pc-flex-only">
+        <li>
+          <button type="button"><span>서울숲</span></button>
+          <ul>
+            <li><a href="#">공원소개</a></li>
+            <li><a href="#">이용시간</a></li>
+            <li><a href="#">주차안내</a></li>
+            <li><a href="#">둘러보기</a></li>
+            <li><a href="#">사용안내</a></li>
+            <li><a href="#">촬영안내</a></li>
+            <li><a href="#" class="link">공원탐방</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button"><span>공원소식</span></button>
+          <ul>
+            <li><a href="#">프로그램</a></li>
+            <li><a href="#">새소식</a></li>
+            <li><a href="#">고시·공고</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button"><span>안내지도</span></button>
+          <ul>
+            <li><a href="#" class="link">안내지도</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button"><span>자료실</span></button>
+          <ul>
+            <li><a href="#">동영상</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button"><span>고객센터</span></button>
+          <ul>
+            <li><a href="#">문의전화</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- mobile -->
+      <div class="sidebar tablet-mo-only">
+        <div class="sidebar-top">
+          <!-- 언어 설정 -->
+          <h2><img src="../../resources/images/header/logo.svg" alt="서울의 공원"/></h2>
+          <!-- 닫기 버튼 -->
+          <button type="button" class="ico-btn ico-close" onclick="closeSideBar()"><span class="visually-hidden">닫기</span></button>
+        </div>
+        <ul class="accordion-nav-list">
+          <li class="active">
+            <button type="button" class="active">서울숲</button>
+            <ul>
+              <li class="active"><a href="#">공원소개</a></li>
+              <li><a href="#">이용시간</a></li>
+              <li><a href="#">주차안내</a></li>
+              <li><a href="#">둘러보기</a></li>
+              <li><a href="#">사용안내</a></li>
+              <li><a href="#">촬영안내</a></li>
+              <li><a href="#">공원탐방</a></li>
+            </ul>
+          </li>
+          <li>
+            <button type="button">공원소식</button>
+            <ul>
+              <li><a href="#">프로그램</a></li>
+              <li><a href="#">새소식</a></li>
+              <li><a href="#">고시·공고</a></li>
+            </ul>
+          </li>
+          <li>
+            <button type="button">안내지도</button>
+            <ul>
+              <li><a href="#">안내지도</a></li>
+            </ul>
+          </li>
+          <li class="long">
+            <button type="button">자료실</button>
+            <ul>
+              <li><a href="#">동영상</a></li>
+            </ul>
+          </li>
+          <li class="long">
+            <button type="button">고객센터</button>
+            <ul>
+              <li><a href="#">문의전화</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- hamburger (mobile) -->
+    <button type="button" class="ico-btn ico-hamburger tablet-mo-flex-only" onclick="openSideBar()"><span class="visually-hidden">메뉴 열기</span></button>
+  </div>
+</header>
+
+<!-- 메인 -->
+<main id="main">
+  <!-- 서브 페이지 텍스트 -->
+  <div class="sub-title-wrap">
+    <div class="sub-title">
+      <h2>FAQ</h2>
+      <div class="breadcrumb">
+        <span class="home"><span class="visually-hidden">경로</span></span>
+        <ul>
+          <li>고객센터</li>
+          <li class="present">FAQ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 서브 페이지 -->
+  <div class="sub-inner-wrap">
+    <section class="sub-sec">
+      <div class="sub-sec-tit-wrap">
+        <h3>FAQ</h3>
+      </div>
+      <div id="faqList" class="faq-list" data-multi="false">
+        <!-- 1. 공원이용 요금 및 이용시간은 어떻게 되나요? -->
+        <article class="faq-item" aria-expanded="false">
+          <div class="faq-head" tabindex="0">
+            <div class="faq-question">
+              <h3>
+                <span class="c-green">Q.</span>
+                <span class="f-tit">
+                  공원이용 요금 및 이용시간은 어떻게 되나요?
+                </span>
+              </h3>
+            </div>
+            <button class="faq-btn" aria-label="토글 답변"><span class="visually-hidden">답변창 열기</span></button>
+          </div>
+          <div class="faq-body">
+            <span class="c-green">A.</span>
+            <p>답변내용 확인 필요</p>
+          </div>
+        </article>
+        <!-- 2. 주차장 이용료는 어떻게 되나요? -->
+        <article class="faq-item" aria-expanded="false">
+          <div class="faq-head" tabindex="0">
+            <div class="faq-question">
+              <h3>
+                <span class="c-green">Q.</span>
+                <span class="f-tit">
+                  주차장 이용료는 어떻게 되나요?
+                </span>
+              </h3>
+            </div>
+            <button class="faq-btn" aria-label="토글 답변"><span class="visually-hidden">답변창 열기</span></button>
+          </div>
+          <div class="faq-body">
+            <span class="c-green">A.</span>
+            <p>서울숲주차장은 24시간 운영되며 총 211면입니다. 요금은 소형은 5분당 200원, 대형은 5분당 400원 입니다.<br/>
+              주차장이 협소하오니 되도록 대중교통을 이용해주시기 바랍니다. 주차장 관리사무소는 주간은 070-4414-1799, 야간은 02-3431-3774 입니다.</p>
+          </div>
+        </article>
+        <!-- 3. 공원에 반려동물을 데려와도되나요? -->
+        <article class="faq-item" aria-expanded="false">
+          <div class="faq-head" tabindex="0">
+            <div class="faq-question">
+              <h3>
+                <span class="c-green">Q.</span>
+                <span class="f-tit">
+                  공원에 반려동물을 데려와도되나요?
+                </span>
+              </h3>
+            </div>
+            <button class="faq-btn" aria-label="토글 답변"><span class="visually-hidden">답변창 열기</span></button>
+          </div>
+          <div class="faq-body">
+            <span class="c-green">A.</span>
+            <p>답변내용 확인 필요</p>
+          </div>
+        </article>
+        <!-- 4. 그늘막이나 텐트를 칠 수 있나요? -->
+        <article class="faq-item" aria-expanded="false">
+          <div class="faq-head" tabindex="0">
+            <div class="faq-question">
+              <h3>
+                <span class="c-green">Q.</span>
+                <span class="f-tit">
+                  그늘막이나 텐트를 칠 수 있나요?
+                </span>
+              </h3>
+            </div>
+            <button class="faq-btn" aria-label="토글 답변"><span class="visually-hidden">답변창 열기</span></button>
+          </div>
+          <div class="faq-body">
+            <span class="c-green">A.</span>
+            <p>답변내용 확인 필요</p>
+          </div>
+        </article>
+        <!-- 5. 서울숲에서 드론 등의 비행장치를 날릴 수 있나요? -->
+        <article class="faq-item" aria-expanded="false">
+          <div class="faq-head" tabindex="0">
+            <div class="faq-question">
+              <h3>
+                <span class="c-green">Q.</span>
+                <span class="f-tit">
+                  서울숲에서 드론 등의 비행장치를 날릴 수 있나요?
+                </span>
+              </h3>
+            </div>
+            <button class="faq-btn" aria-label="토글 답변"><span class="visually-hidden">답변창 열기</span></button>
+          </div>
+          <div class="faq-body">
+            <span class="c-green">A.</span>
+            <p>답변내용 확인 필요</p>
+          </div>
+        </article>
+        <!-- 6. 공연장이나 실내공간을 사용하고 싶으면 어떻게 해야하나요? -->
+        <article class="faq-item" aria-expanded="false">
+          <div class="faq-head" tabindex="0">
+            <div class="faq-question">
+              <h3>
+                <span class="c-green">Q.</span>
+                <span class="f-tit">
+                  공연장이나 실내공간을 사용하고 싶으면 어떻게 해야하나요?
+                </span>
+              </h3>
+            </div>
+            <button class="faq-btn" aria-label="토글 답변"><span class="visually-hidden">답변창 열기</span></button>
+          </div>
+          <div class="faq-body">
+            <span class="c-green">A.</span>
+            <p>답변내용 확인 필요</p>
+          </div>
+        </article>
+        <!-- 7. 공원내에서 촬영을 할 수 있나요? -->
+        <article class="faq-item" aria-expanded="false">
+          <div class="faq-head" tabindex="0">
+            <div class="faq-question">
+              <h3>
+                <span class="c-green">Q.</span>
+                <span class="f-tit">
+                  공원내에서 촬영을 할 수 있나요?
+                </span>
+              </h3>
+            </div>
+            <button class="faq-btn" aria-label="토글 답변"><span class="visually-hidden">답변창 열기</span></button>
+          </div>
+          <div class="faq-body">
+            <span class="c-green">A.</span>
+            <p>답변내용 확인 필요</p>
+          </div>
+        </article>
+        <!-- 8. 체육시설은 어떻게 이용하나요? -->
+        <article class="faq-item" aria-expanded="false">
+          <div class="faq-head" tabindex="0">
+            <div class="faq-question">
+              <h3>
+                <span class="c-green">Q.</span>
+                <span class="f-tit">
+                  체육시설은 어떻게 이용하나요?
+                </span>
+              </h3>
+            </div>
+            <button class="faq-btn" aria-label="토글 답변"><span class="visually-hidden">답변창 열기</span></button>
+          </div>
+          <div class="faq-body">
+            <span class="c-green">A.</span>
+            <p>답변내용 확인 필요</p>
+          </div>
+        </article>
+        <!-- 9. 자전거나 인라인스케이트, 운동도구를 대여할 수 있나요? -->
+        <article class="faq-item" aria-expanded="false">
+          <div class="faq-head" tabindex="0">
+            <div class="faq-question">
+              <h3>
+                <span class="c-green">Q.</span>
+                <span class="f-tit">
+                  자전거나 인라인스케이트, 운동도구를 대여할 수 있나요?
+                </span>
+              </h3>
+            </div>
+            <button class="faq-btn" aria-label="토글 답변"><span class="visually-hidden">답변창 열기</span></button>
+          </div>
+          <div class="faq-body">
+            <span class="c-green">A.</span>
+            <p>답변내용 확인 필요</p>
+          </div>
+        </article>
+        <!-- 10. 서울숲에서 자원봉사를 하고 싶어요 -->
+        <article class="faq-item" aria-expanded="false">
+          <div class="faq-head" tabindex="0">
+            <div class="faq-question">
+              <h3>
+                <span class="c-green">Q.</span>
+                <span class="f-tit">
+                  서울숲에서 자원봉사를 하고 싶어요
+                </span>
+              </h3>
+            </div>
+            <button class="faq-btn" aria-label="토글 답변"><span class="visually-hidden">답변창 열기</span></button>
+          </div>
+          <div class="faq-body">
+            <span class="c-green">A.</span>
+            <p>답변내용 확인 필요</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+
+<!-- 푸터 -->
+<footer>
+  <div class="inner-wrap">
+    <div class="footer-top">
+      <div class="footer-info">
+        <ul>
+          <li><a href="#">홈페이지 바로잡기</a></li>
+          <li><a href="#">조직 및 업무 검색</a></li>
+          <li><a href="#">다산콜센터</a></li>
+          <li class="point"><a href="#">공원주요연락처</a></li>
+        </ul>
+      </div>
+      <div class="footer-lang-wrap">
+        <img src="../../resources/images/footer/footer_logo1.png" alt="응답소"/>
+        <a href="#" target="_blank" title="페이스북 새 창 열기"><img src="../../resources/images/footer/sns_facebook.svg" alt="페이스북"/></a>
+        <div class="custom-select" data-options="1">
+          <button type="button" class="select-toggle" aria-haspopup="listbox" aria-expanded="false">
+            <span class="selected-text"></span>
+          </button>
+          <ul class="select-list" role="listbox" aria-hidden="true"></ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="f-bottom-wrap">
+        <h4><img src="../../resources/images/footer/logo_footer.svg" alt="서울의 공원"/></h4>
+        <ul>
+          <li>(04514) 서울특별시 중구 서소문로 124 씨티스퀘어 8층 ㅣ 02)120</li>
+          <li>COPYRIGHT©2026 SEOUL METROPOLITAN GOVERNMENT. ALL RIGHTS RESERVED</li>
+        </ul>
+      </div>
+      <a href="#" target="_blank" title="다산콜센터 120 전화걸기" class="f-call">
+        <span class="f-tit">다산콜센터</span>
+        <span class="f-phone-num">120</span>
+      </a>
+
+    </div>
+  </div>
+</footer>
+<script>
+  (function(){
+    const faqList = document.getElementById('faqList');
+    // 초기값 반영
+    faqList.dataset.multi = 'true';
+
+    function closeItem(item){
+      item.setAttribute('aria-expanded', 'false');
+
+      const btn = item.querySelector('.faq-btn');
+      const hiddenText = btn.querySelector('.visually-hidden');
+
+      btn.setAttribute('aria-label', '답변 열기');
+      hiddenText.textContent = '답변 열기';
+    }
+
+    function openItem(item){
+      item.setAttribute('aria-expanded', 'true');
+
+      const btn = item.querySelector('.faq-btn');
+      const hiddenText = btn.querySelector('.visually-hidden');
+
+      btn.setAttribute('aria-label', '답변 닫기');
+      hiddenText.textContent = '답변 닫기';
+    }
+
+    function toggleItem(item){
+      const expanded = item.getAttribute('aria-expanded') === 'true';
+      const allowMultiple = faqList.dataset.multi === 'true';
+      if(expanded){
+        closeItem(item);
+      } else {
+        if(!allowMultiple){
+          // 다른 faqu닫기
+          Array.from(faqList.querySelectorAll('.faq-item[aria-expanded="true"]')).forEach(other=>{
+            if(other !== item) closeItem(other);
+          });
+        }
+        openItem(item);
+      }
+    }
+
+    faqList.addEventListener('click', function(e){
+      // header or button 클릭이면 해당 faq-item 찾기
+      const head = e.target.closest('.faq-head');
+      if(!head) return;
+      const item = head.closest('.faq-item');
+      toggleItem(item);
+    });
+
+    // 키보드 Enter / Space on header
+    faqList.addEventListener('keydown', function(e){
+      const head = e.target.closest('.faq-head');
+      if(!head) return;
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        const item = head.closest('.faq-item');
+        toggleItem(item);
+      }
+      if(e.key === 'ArrowDown' || e.key === 'ArrowUp'){
+        e.preventDefault();
+        const headers = Array.from(faqList.querySelectorAll('.faq-head'));
+        const idx = headers.indexOf(head);
+        let next = (e.key === 'ArrowDown') ? headers[idx+1] : headers[idx-1];
+        if(next) next.focus();
+      }
+    });
+  })();
+</script>
+</body>
+</html>

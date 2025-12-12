@@ -347,83 +347,6 @@ function initializeCustomSelect(selectElement, selectOptions, options = {}) {
 
   document.addEventListener('click', documentClickHandler);
   selectElement._documentClickHandler = documentClickHandler;
-
-  return {
-    destroy: () => {
-      if (selectElement._documentClickHandler) {
-        document.removeEventListener('click', selectElement._documentClickHandler);
-      }
-      selectElement._initialized = false;
-    },
-    update: newOptions => {
-      const list = selectElement.querySelector('.select-list');
-      if (list) {
-        while (list.firstChild) list.removeChild(list.firstChild);
-        initializeCustomSelect(selectElement, newOptions, options);
-      }
-    }
-  };
-}
-/* [메인] 스와이퍼 */
-function initFadeSwiper(swiperSelector, paginationSelector, options = {}) {
-  // 기본 Swiper 옵션
-  const defaultOptions = {
-    loop: false,
-    effect: 'fade',
-    fadeEffect: { crossFade: true },
-    allowTouchMove: options.allowTouchMove !== undefined ? options.allowTouchMove : true
-  };
-
-  // 페이지네이션 관련 이벤트 핸들러
-  const slideChangeHandler = function() {
-    const currentIndex = this.activeIndex;
-
-    // 페이지네이션이 있는 경우에만 처리
-    if (paginationSelector) {
-      const buttons = document.querySelectorAll(`${paginationSelector} .color-badge`);
-      buttons.forEach((btn, i) => {
-        const isActive = i === currentIndex;
-        btn.classList.toggle('active', isActive);
-        // green 클래스는 특정 스와이퍼에서만 사용
-        if (swiperSelector.includes('sec-left4-swiper')) {
-          btn.classList.toggle('green', isActive);
-          btn.classList.toggle('line', !isActive);
-        }
-      });
-    }
-
-    // 연결된 서브 스와이퍼 처리
-    if (options.linkedSwiper) {
-      options.linkedSwiper.slideTo(currentIndex);
-    }
-
-    // 추가 콜백 실행
-    if (options.on?.slideChange) {
-      options.on.slideChange.call(this);
-    }
-  };
-
-  // 최종 Swiper 옵션 병합
-  const swiperOptions = {
-    ...defaultOptions,
-    ...options,
-    on: {
-      ...options.on,
-      slideChange: slideChangeHandler
-    }
-  };
-
-  // Swiper 인스턴스 생성
-  const swiper = new Swiper(swiperSelector, swiperOptions);
-
-  // 페이지네이션 버튼 이벤트 등록 (있는 경우에만)
-  if (paginationSelector) {
-    document.querySelectorAll(`${paginationSelector} .color-badge`).forEach((btn, index) => {
-      btn.addEventListener('click', () => swiper.slideTo(index));
-    });
-  }
-
-  return swiper;
 }
 
 /* 3. [공통]모달 관련 함수 */
@@ -639,45 +562,6 @@ function showModal(modalId, options = {}) {
     modal.setAttribute('aria-hidden', 'false');
     modalStack.push(modalId);
   }
-  // [위치 이동] 4. 모달별 개별 처리
-  if (modalId === 'modal_intro_swiper') {
-    const preloadImages = () => {
-      const images = document.querySelectorAll('#modal_intro_swiper img');
-      let loaded = 0;
-      return new Promise(resolve => {
-        if (images.length === 0) return resolve();
-        images.forEach(img => {
-          const done = () => (++loaded === images.length && resolve());
-          img.complete ? done() : (img.onload = done, img.onerror = done);
-        });
-      });
-    };
-    preloadImages().then(() => {
-      const facilitySwiper = new Swiper(".facility-swiper", {
-        slidesPerView: 1,
-        loop: false,
-        navigation: {
-          nextEl: ".facility-swiper .swiper-button-next",
-          prevEl: ".facility-swiper .swiper-button-prev"
-        },
-        virtualTranslate: true,
-        effect: "fade",
-        autoHeight: true,
-        fadeEffect: { crossFade: true },
-        on: {
-          init: function () { this.update(); },
-          slideChange: function () {
-            const activeSlide = this.slides[this.activeIndex];
-            updateFacilityTitle(modalId, activeSlide.dataset.facility);
-          }
-        }
-      });
-      updateFacilityTitle(modalId, 'b1');
-    });
-  } else if (modalId === 'modal_intro_space') {
-    handleResizeInModal('event1');
-    window.addEventListener("resize", () => handleResizeInModal('event1'));
-  }
 }
 // 모달 안 focus 가능한 영역 확인 코드 : 최상단 모달에서만 tab키를 눌러도 반응해야하는게 목적
 const handleFocusTrap = (modal) => {
@@ -790,7 +674,7 @@ function hideModal(modalId, focusId) {
   const focus = document.getElementById(focusId);
   if (!modal) return;
 
-  // ✅ 1. multiple-modal-ver 여부 확인
+  //  1. multiple-modal-ver 여부 확인
   const parentModal = modal.closest('.modal');
   const isMultipleModal = parentModal && parentModal.dataset.modalType === 'multiple-modal-ver';
 
