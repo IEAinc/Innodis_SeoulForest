@@ -150,7 +150,7 @@ footer > .inner-wrap {max-width:1367px;width:100%;margin:0 auto;height:100%;disp
 .controller .swiper-pagination-bullet.swiper-pagination-bullet-active {width:100%;background-color:blue;position:relative;border-radius:0;transition:width 0.5s;}
 .controller .swiper-pagination-bullet.swiper-pagination-bullet-active::before {content:'';width:calc(100% - 22px);height:1px;position:absolute;left:0;top:50%;transform:translateY(-50%);background-color:var(--color-white);}
 .controller .swiper-pagination-bullet.swiper-pagination-bullet-active::after {content:'';left:auto;right:0;width:22px;height:22px;background-image:url("../images/icons/ico_flower.svg");background-repeat:no-repeat;background-size:22px;background-position:center center;background-color:var(--color-transparent)!important;transform: translate(0,-50%)}
-.controller .swiper-pagination-bullet {opacity:1!important;background-color:var(--color-transparent)!important;margin:0;width:22px;height:22px;border-radius:0;position:relative;}
+.controller .swiper-pagination-bullet {margin:0!important;opacity:1!important;background-color:var(--color-transparent)!important;margin:0;width:22px;height:22px;border-radius:0;position:relative;}
 .controller .swiper-pagination-bullet::after {content:'';width:8px;height:8px;background-color:var(--color-white);border-radius:50%;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index: 1;}
 .controller .swiper-button-next,
 .controller .swiper-button-prev {width:24px;height:24px;position:static!important;margin-top:0;background-size:16px;background-repeat:no-repeat;background-position:center center;}
