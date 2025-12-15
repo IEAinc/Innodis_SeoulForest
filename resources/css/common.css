@@ -46,6 +46,7 @@
 
   /* 서브페이지 안의 내용 */
 .sub-sec-tit-wrap {display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:60px;}
+.sub-sec-tit-wrap.sm {margin-bottom:36px;}
 .sub-sec-tit-wrap > h3 {font-size:48px;font-weight:var(--fw-bold);color:var(--color-black);padding-left:20px;position:relative;}
 .sub-sec-tit-wrap > h3::before {content:'';width:8px;height:24px;background-color:var(--main-color);position:absolute;left:0;top:50%;transform:translateY(-50%);}
 .sub-desc-box > p {font-size:18px;font-weight:var(--fw-regular);color:var(--color-gray7);line-height:1.5;}
@@ -292,6 +293,14 @@
 .ico-txt-btn {display:inline-flex;align-items:center;font-weight:var(--fw-medium);font-size:18px;color:var(--color-white);padding:12px 24px 12px 48px;border-radius:100px;border:1px solid var(--color-transparent);background-color:var(--main-color);background-size:14px;background-repeat:no-repeat;background-position:left 24px center;transition:all 0.3s;}
 .ico-txt-btn.bg-light-green {background-color:var(--color-light-green);}
 .ico-txt-btn.right-ver {height:62px;padding:12px 64px 12px 36px;background-size:18px;background-position:right 36px center;}
+.ico-txt-btn.all-ver {height:62px;padding:12px 64px 12px 85px; position:relative;background-size:18px;background-position:right 36px center;}
+.ico-txt-btn.all-ver::before {content:'';width:38px;height:22px;position:absolute;left:36px;top:50%;background-repeat:no-repeat;background-size:100%;background-position:center center;transform:translateY(-50%);}
+.ico-txt-btn.all-ver.ico-eng-left::before {background-image: url("../images/contents/main/main_eng.svg")}
+.ico-txt-btn.all-ver.ico-eng-left:hover::before {background-image: url("../images/contents/main/main_eng_active.svg")}
+.ico-txt-btn.all-ver.ico-kr-left::before {background-image: url("../images/contents/main/main_ko.svg")}
+.ico-txt-btn.all-ver.ico-kr-left:hover::before {background-image: url("../images/contents/main/main_ko_active.svg")}
+.ico-txt-btn.ico-download{}
+
 .ico-txt-btn:hover {background-color:var(--color-white);color:var(--main-color);border-color:var(--main-color);}
 .ico-txt-btn.ico-dot {background-image:url("../images/icons/ico_dot_white.svg");}
 .ico-txt-btn.ico-dot:hover {background-image:url("../images/icons/ico_dot_green.svg");}
@@ -301,7 +310,9 @@
 
 @media (max-width:650px) {
   .ico-txt-btn {padding:8px 16px 8px 32px;font-size:14px;background-size:12px;background-position: left 12px center;}
-  .ico-txt-btn.right-ver {height:50px;padding:8px 48px 8px 24px;font-size:14px;;background-size:14px;background-position: right 24px center;}
+  .ico-txt-btn.right-ver {height:50px;padding:8px 48px 8px 24px;font-size:14px;background-size:14px;background-position: right 24px center;}
+  .ico-txt-btn.all-ver {height:48px;padding:12px 40px 12px 48px;font-size:16px;background-size:14px;background-position: right 18px center;}
+  .ico-txt-btn.all-ver::before {width:24px;height:14px;left:18px;}
 }
 
 /* btn */

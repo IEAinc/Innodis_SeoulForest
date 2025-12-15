@@ -32,7 +32,20 @@
 /* GmarketSans */
 @font-face{
   font-family:"GmarketSans";
+  src:url("../fonts/GmarketSansTTFMedium.woff") format('woff');
+  font-weight:500;
+  font-style:normal;
+}
+@font-face{
+  font-family:"GmarketSans";
   src:url("../fonts/GmarketSansTTFBold.woff") format('woff');
+  font-weight:700;
+  font-style:normal;
+}
+/* KIMM */
+@font-face{
+  font-family:"Kimm";
+  src:url("../fonts/KIMM_bold.woff") format('woff');
   font-weight:700;
   font-style:normal;
 }
