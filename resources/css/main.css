@@ -437,7 +437,7 @@ footer > .inner-wrap {max-width:1367px;width:100%;margin:0 auto;height:100%;disp
 .faq-btn::after {content:'';width:16px;height:16px;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background-image:url("../images/icons/ico_arrow_down_black.svg");background-position:center center;background-repeat:no-repeat;background-size:16px;}
 .faq-item .faq-head {border-bottom:1px solid var(--border-color);}
 .faq-item[aria-expanded="true"] {border:2px solid var(--main-color);border-radius:20px;box-shadow: 0 0 12px 0 #00000040;}
-.faq-item[aria-expanded="true"] .faq-head {border-bottom:0;border-radius:20px 20px 0 0;border:0;}
+.faq-item[aria-expanded="true"] .faq-head {border-radius:20px 20px 0 0;border:0;}
 .faq-item[aria-expanded="true"] .faq-body {max-height: 20000px;height:100%;padding:48px;}
 .faq-item[aria-expanded="true"] .faq-btn::after {transform:translate(-50% ,-50%) rotate(-180deg);}
 /* 답변관련 */
