@@ -192,12 +192,15 @@ footer > .inner-wrap {max-width:1367px;width:100%;margin:0 auto;height:100%;disp
 
 
 /* main > main-banner */
-.sec1 {padding:0 40px;max-width:1850px;margin:0 auto;}
+.sec1 {max-width:1850px;margin:0 auto;width:100%;}
 .main-swiper .swiper-slide {border-radius:20px;height:780px;overflow:hidden;position:relative;}
 .main-swiper .swiper-slide::after{content:'';width:100%;height:100%;background:linear-gradient(180deg, rgba(0, 0, 0, 0) 22.17%, rgba(0, 0, 0, 0.5) 100%);position:absolute;left:0;top:0;}
 .main-swiper .swiper-slide > img {width:100%;height:100%;object-fit:cover;object-position:center center;}
 .main-swiper .desc-wrap {display:flex;flex-direction:column;align-items:flex-end;gap:60px;position:absolute;right:70px;bottom:70px;z-index: 1;}
 .main-swiper .desc-wrap > p {font-family: "Kimm", sans-serif;font-weight:var(--fw-bold);color:var(--color-white);text-align:right;line-height:1.3;font-size:60px;}
+@media (max-width:1850px) {
+  .sec1 {padding:0 40px;}
+}
 @media (max-width:1024px) {
   /* main > main-banner */
   .main-swiper .desc-wrap {gap:24px;right:16px;bottom:60px;}
@@ -213,7 +216,7 @@ footer > .inner-wrap {max-width:1367px;width:100%;margin:0 auto;height:100%;disp
 }
 
 /* main > popup zone */
-.sec2 {padding:40px;}
+.sec2 {padding:40px 0;max-width:1850px;margin:0 auto;}
 .sec2 > .inner-wrap {padding:100px 24px;border-radius:20px;background-color:var(--bg-color-green);}
 .sec2-wrap {max-width:1402px;width:100%;margin:0 auto;display:flex;align-items:center;gap:24px;justify-content: space-between;}
 .gm-tit-wrap {display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:24px;}
@@ -235,6 +238,9 @@ footer > .inner-wrap {max-width:1367px;width:100%;margin:0 auto;height:100%;disp
 .circle-ico.ico4 {background-image: url("../images/contents/main/main_ico_sound.svg");}
 .circle-ico.ico5 {background-image: url("../images/contents/main/main_ico_camera.svg");}
 .circle-ico.ico6 {background-image: url("../images/contents/main/main_ico_archive.svg");}
+@media (max-width:1850px) {
+  .sec2 {padding:40px;}
+}
 @media (max-width:1420px) {
   .sec2 .sec-left{width:540px;}
   .quick-grid {width:100%;column-gap:initial;}
@@ -299,9 +305,27 @@ footer > .inner-wrap {max-width:1367px;width:100%;margin:0 auto;height:100%;disp
 }
 
 /* main > ad */
-.sec-ad {max-width:1920px;margin:0 auto;}
+.sec-ad {max-width:1920px;margin:0 auto;width:100%;}
+.sec-ad > .inner-wrap {padding:0 40px;}
 .ad-box {width:100%;}
 .ad-box > img {width: 100%;}
+.ad-box > img.first {display: block!important;}
+.ad-box > img.second {display: none!important;}
+.ad-box > img.third {display: none!important;}
+@media (max-width:1400px) {
+  .ad-box > img.first {display: none!important;}
+  .ad-box > img.second {display: block!important;}
+  .ad-box > img.third {display: none!important;}
+}
+@media (max-width:750px) {
+  .ad-box > img.first {display: none!important;}
+  .ad-box > img.second {display: none!important;}
+  .ad-box > img.third {display: block!important;}
+}
+@media (max-width:650px) {
+  .sec-ad > .inner-wrap {padding:0 16px;}
+
+}
 
 /* main > 서울숲SNS */
 .sec5 {max-width:1402px;margin:0 auto;padding:100px 0 0;}
