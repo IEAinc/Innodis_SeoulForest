@@ -428,8 +428,8 @@ footer > .inner-wrap {max-width:1367px;width:100%;margin:0 auto;height:100%;disp
 .faq-head {display:flex;justify-content:space-between;align-items:center;padding:48px;border-radius:20px;border-width:1px 1px 0 1px;border-style:solid;border-color:var(--border-color);}
 .faq-question {width:calc(100% - 56px);}
 .faq-question > h3 {display:flex;align-items:flex-start;gap:12px;}
-.faq-question > h3 > span {font-size:30px;font-weight:var(--fw-bold);line-height:1.5;}
-.faq-question > h3 > span.f-tit {color:var(--color-gray4);font-weight:var(--fw-semi-bold);}
+.faq-question > h3 > span {font-size:30px;font-weight:var(--fw-bold);line-height:1;}
+.faq-question > h3 > span.f-tit {color:var(--color-gray4);font-weight:var(--fw-semi-bold);line-height:1.5;}
 .faq-body {padding:48px;background-color:var(--bg-color-gray);border-radius:0 0 20px 20px;display:flex;flex-direction:column;gap:12px}
 .faq-body span.c-green {font-size:30px;font-weight:var(--fw-bold);line-height:1.5;}
 .faq-body  p {font-size:18px;font-weight:var(--fw-regular);color:var(--color-gray4);line-height:1.5;}
@@ -437,7 +437,7 @@ footer > .inner-wrap {max-width:1367px;width:100%;margin:0 auto;height:100%;disp
 .faq-btn::after {content:'';width:16px;height:16px;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background-image:url("../images/icons/ico_arrow_down_black.svg");background-position:center center;background-repeat:no-repeat;background-size:16px;}
 .faq-item .faq-head {border-bottom:1px solid var(--border-color);}
 .faq-item[aria-expanded="true"] {border:2px solid var(--main-color);border-radius:20px;box-shadow: 0 0 12px 0 #00000040;}
-.faq-item[aria-expanded="true"] .faq-head {border-bottom:0;border-radius:20px 20px 0 0;}
+.faq-item[aria-expanded="true"] .faq-head {border-bottom:0;border-radius:20px 20px 0 0;border:0;}
 .faq-item[aria-expanded="true"] .faq-body {max-height: 20000px;height:100%;padding:48px;}
 .faq-item[aria-expanded="true"] .faq-btn::after {transform:translate(-50% ,-50%) rotate(-180deg);}
 /* 답변관련 */
@@ -464,6 +464,7 @@ footer > .inner-wrap {max-width:1367px;width:100%;margin:0 auto;height:100%;disp
   .faq-btn {width:24px;height:24px;background-size:16px;}
   .faq-body {padding: 24px;}
   .faq-body p {font-size:14px;}
+  .faq-item[aria-expanded="true"] {border-radius:12px;}
   .faq-item[aria-expanded="true"] .faq-head {border-bottom:1px solid var(--main-color);}
   .faq-item[aria-expanded="true"] .faq-body {padding:24px;border-top:1px solid var(--main-color);}
   .faq-body span.c-green {font-size:20px;}
