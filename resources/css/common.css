@@ -376,6 +376,7 @@
   .select-toggle {height:50px;}
   .selected-value {font-size:16px;}
   .select-list[aria-hidden="false"] {top:40px;}
+  .custom-select.up .select-list[aria-hidden="false"] {bottom:50px;border-bottom:1px solid var(--border-color);}
 }
 
 /* 탭 */
