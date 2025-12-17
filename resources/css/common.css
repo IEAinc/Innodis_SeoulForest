@@ -92,6 +92,7 @@
 .td-wrap.column {flex-direction:column;align-items:flex-start;gap:0;}
 .td-wrap.center {justify-content:center;}
 .td-wrap.center p {text-align:center;}
+.t-box + .t-box {margin-top:10px;}
 
 @media (max-width: 650px) {
   /* custom-info-table */
@@ -290,6 +291,7 @@
 /* text */
 .em {font-weight:var(--fw-bold);}
 .c-green {color:var(--main-color);}
+.c-blue {color:var(--color-blue);}
 .c-point {color:var(--color-point);}
 .c-gray {color:var(--color-gray);}
 .underline {text-decoration:underline;}
