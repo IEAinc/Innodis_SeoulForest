@@ -2,7 +2,7 @@
 <html lang=ko>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <!-- css -->
@@ -81,7 +81,7 @@
       <div class="sidebar tablet-mo-only">
         <div class="sidebar-top">
           <!-- 언어 설정 -->
-          <h2><img src="../../resources/images/header/logo.svg" alt="서울의 공원"/></h2>
+          <h2><img src="../../resources/images/header/logo.svg" alt="서울의 공원"></h2>
           <!-- 닫기 버튼 -->
           <button type="button" class="ico-btn ico-close" onclick="closeSideBar()"><span class="visually-hidden">닫기</span></button>
         </div>
@@ -161,16 +161,13 @@
           <h4>공원안내</h4>
         </div>
         <div class="gray-box">
-          <div class="trans-table">
+          <div class="trans-table pc-tablet-only">
             <table>
               <caption class="visually-hidden">공원안내에 관한 표: (이용시간,분실물/촬영녹화문의/장소사용문의 전화번호 포함)</caption>
               <colgroup>
                 <!-- pc & tablet -->
-                <col style="width:286px;" class="pc-tablet-table-column-only"/>
-                <col style="width:calc(100% - 286px);" class="pc-tablet-table-column-only"/>
-                <!-- mo  -->
-                <col style="width:172px;" class="mo-table-column-only"/>
-                <col style="width:calc(100% - 172px);" class="mo-table-column-only"/>
+                <col style="width:286px;">
+                <col style="width:calc(100% - 286px);">
               </colgroup>
               <tbody>
               <tr>
@@ -192,7 +189,7 @@
                   </div>
                 </th>
                 <td>
-                  <div class="td-wrap">02-460-2905, <br class="mo-only"/>02-460-2974</div>
+                  <div class="td-wrap">02-460-2905,<br class="mo-only">02-460-2974</div>
                 </td>
               </tr>
               <tr>
@@ -203,7 +200,52 @@
                   </div>
                 </th>
                 <td>
-                  <div class="td-wrap">02-460-2905, <br class="mo-only"/>02-460-2973</div>
+                  <div class="td-wrap">02-460-2905,<br class="mo-only">02-460-2973</div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="trans-table mo-only">
+            <table>
+              <caption class="visually-hidden">공원안내에 관한 표: (이용시간,분실물/촬영녹화문의/장소사용문의 전화번호 포함)</caption>
+              <colgroup>
+                <!-- mo  -->
+                <col style="width:172px;">
+                <col style="width:calc(100% - 172px);">
+              </colgroup>
+              <tbody>
+              <tr>
+                <th>
+                  <div class="circle-num">
+                    <span>1</span>
+                    <p>이용시간,분실물 등</p>
+                  </div>
+                </th>
+                <td>
+                  <div class="td-wrap">02-460-2905</div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <div class="circle-num">
+                    <span>2</span>
+                    <p>촬영녹화문의</p>
+                  </div>
+                </th>
+                <td>
+                  <div class="td-wrap">02-460-2905,<br class="mo-only">02-460-2974</div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <div class="circle-num">
+                    <span>3</span>
+                    <p>장소사용문의</p>
+                  </div>
+                </th>
+                <td>
+                  <div class="td-wrap">02-460-2905,<br class="mo-only">02-460-2973</div>
                 </td>
               </tr>
               </tbody>
@@ -218,23 +260,98 @@
           <h4>이용문의</h4>
         </div>
         <div class="gray-box">
-          <div class="trans-table">
+          <div class="trans-table pc-tablet-only">
             <table>
               <caption class="visually-hidden">이용문의에 관한 표: (방문자센터(안내소,수유실운영/공원프로그램/봉사활동/후원문의/생태숲/곤충식물원/나비정원 전화번호 포함)</caption>
               <colgroup>
                 <!-- pc & tablet -->
-                <col style="width:286px;" class="pc-tablet-table-column-only"/>
-                <col style="width:calc(100% - 286px);" class="pc-tablet-table-column-only"/>
-                <!-- mo  -->
-                <col style="width:172px;" class="mo-table-column-only"/>
-                <col style="width:calc(100% - 172px);" class="mo-table-column-only"/>
+                <col style="width:286px;">
+                <col style="width:calc(100% - 286px);">
               </colgroup>
               <tbody>
               <tr>
                 <th>
                   <div class="circle-num">
                     <span>1</span>
-                    <p>방문자센터<br class="mo-only"/>(안내소, 수유실운영)</p>
+                    <p>방문자센터<br class="mo-only">(안내소, 수유실운영)</p>
+                  </div>
+                </th>
+                <td>
+                  <div class="td-wrap">02-460-2905~6</div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <div class="circle-num">
+                    <span>2</span>
+                    <p>공원이용프로그램</p>
+                  </div>
+                </th>
+                <td>
+                  <div class="td-wrap">02-460-2944~5</div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <div class="circle-num">
+                    <span>3</span>
+                    <p>봉사활동/후원문의</p>
+                  </div>
+                </th>
+                <td>
+                  <div class="td-wrap">02-460-2949~50</div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <div class="circle-num">
+                    <span>4</span>
+                    <p>생태숲</p>
+                  </div>
+                </th>
+                <td>
+                  <div class="td-wrap">02-460-2905</div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <div class="circle-num">
+                    <span>5</span>
+                    <p>곤충식물원</p>
+                  </div>
+                </th>
+                <td>
+                  <div class="td-wrap">02-460-2949~50</div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <div class="circle-num">
+                    <span>6</span>
+                    <p>나비정원</p>
+                  </div>
+                </th>
+                <td>
+                  <div class="td-wrap">02-460-2949~50</div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="trans-table mo-only">
+            <table>
+              <caption class="visually-hidden">이용문의에 관한 표: (방문자센터(안내소,수유실운영/공원프로그램/봉사활동/후원문의/생태숲/곤충식물원/나비정원 전화번호 포함)</caption>
+              <colgroup>
+                <!-- mo  -->
+                <col style="width:172px;">
+                <col style="width:calc(100% - 172px);">
+              </colgroup>
+              <tbody>
+              <tr>
+                <th>
+                  <div class="circle-num">
+                    <span>1</span>
+                    <p>방문자센터<br class="mo-only">(안내소, 수유실운영)</p>
                   </div>
                 </th>
                 <td>
@@ -308,16 +425,13 @@
           <h4>주차문의</h4>
         </div>
         <div class="gray-box">
-          <div class="trans-table">
+          <div class="trans-table pc-tablet-only">
             <table>
               <caption class="visually-hidden">주차문의에 관한 표: (주차 관리사무소/요금표/주차단위구획 전화번호 포함)</caption>
               <colgroup>
                 <!-- pc & tablet -->
-                <col style="width:286px;" class="pc-tablet-table-column-only"/>
-                <col style="width:calc(100% - 286px);" class="pc-tablet-table-column-only"/>
-                <!-- mo  -->
-                <col style="width:172px;" class="mo-table-column-only"/>
-                <col style="width:calc(100% - 172px);" class="mo-table-column-only"/>
+                <col style="width:286px;">
+                <col style="width:calc(100% - 286px);">
               </colgroup>
               <tbody>
               <tr>
@@ -328,7 +442,7 @@
                   </div>
                 </th>
                 <td>
-                  <div class="td-wrap">(주간) 070-4414-1799 / <br class="mo-only"/>(야간) 02-3431-3774</div>
+                  <div class="td-wrap">(주간) 070-4414-1799 /<br class="mo-only">(야간) 02-3431-3774</div>
                 </td>
               </tr>
               <tr>
@@ -339,7 +453,52 @@
                   </div>
                 </th>
                 <td>
-                  <div class="td-wrap">5분당 요금 소형 : 200원 / <br class="mo-only"/>대형 : 400원</div>
+                  <div class="td-wrap">5분당 요금 소형 : 200원 /<br class="mo-only">대형 : 400원</div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <div class="circle-num">
+                    <span>3</span>
+                    <p>주차단위구획</p>
+                  </div>
+                </th>
+                <td>
+                  <div class="td-wrap">211면</div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="trans-table mo-only">
+            <table>
+              <caption class="visually-hidden">주차문의에 관한 표: (주차 관리사무소/요금표/주차단위구획 전화번호 포함)</caption>
+              <colgroup>
+                <!-- mo  -->
+                <col style="width:172px;">
+                <col style="width:calc(100% - 172px);">
+              </colgroup>
+              <tbody>
+              <tr>
+                <th>
+                  <div class="circle-num">
+                    <span>1</span>
+                    <p>주차 관리사무소</p>
+                  </div>
+                </th>
+                <td>
+                  <div class="td-wrap">(주간) 070-4414-1799 /<br class="mo-only">(야간) 02-3431-3774</div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <div class="circle-num">
+                    <span>2</span>
+                    <p>요금표</p>
+                  </div>
+                </th>
+                <td>
+                  <div class="td-wrap">5분당 요금 소형 : 200원 /<br class="mo-only">대형 : 400원</div>
                 </td>
               </tr>
               <tr>
@@ -376,8 +535,8 @@
         </ul>
       </div>
       <div class="footer-lang-wrap">
-        <img src="../../resources/images/footer/footer_logo1.png" alt="응답소"/>
-        <a href="#" target="_blank" title="페이스북 새 창 열기"><img src="../../resources/images/icons/sns_facebook.svg" alt="페이스북"/></a>
+       <img src="../../resources/images/footer/footer_logo1.png" alt="응답소">
+        <a href="#" target="_blank" title="페이스북 새 창 열기"><img src="../../resources/images/icons/sns_facebook.svg" alt="페이스북"></a>
         <div class="custom-select" data-options="1">
           <button type="button" class="select-toggle" aria-haspopup="listbox" aria-expanded="false">
             <span class="selected-text"></span>
@@ -388,7 +547,7 @@
     </div>
     <div class="footer-bottom">
       <div class="f-bottom-wrap">
-        <h4><img src="../../resources/images/footer/logo_footer.svg" alt="서울의 공원"/></h4>
+        <h4><img src="../../resources/images/footer/logo_footer.svg" alt="서울의 공원"></h4>
         <ul>
           <li>(04514) 서울특별시 중구 서소문로 124 씨티스퀘어 8층 ㅣ 02)120</li>
           <li>COPYRIGHT©2026 SEOUL METROPOLITAN GOVERNMENT. ALL RIGHTS RESERVED</li>
